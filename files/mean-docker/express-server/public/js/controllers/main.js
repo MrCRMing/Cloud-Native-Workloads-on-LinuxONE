@@ -102,7 +102,7 @@ angular.module('todoController', [])
 			Clients.get();
 			for(var i=0;i<clients.length;i++){
 				if(Input.client_id==clients[i].client_id){
-					if(Input.client_id==clients[i].password){
+					if(Input.password==clients[i].password){
 						window.location.href='index_2.html';
 						find=true;
 					}
