@@ -14,6 +14,7 @@ angular.module('todoController', [])
 				$scope.loading = false;
 			});
 		$scope.formData.text="Data1";
+		$scope.formData.value="Data1";
 		Todos.create($scope.formData)
 
 			// if successful creation, call our get function to get all the new todos
