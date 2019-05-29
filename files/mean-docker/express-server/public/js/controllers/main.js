@@ -3,6 +3,7 @@ angular.module('todoController', [])
 	// inject the Todo service factory into our controller
 	.controller('mainController', ['$scope','$http','Todos','Clients', function($scope, $http, Todos,Clients) {
 		$scope.formData = {};
+		$scope.formData1 = {};
 		$scope.loading = true;
 
 		// GET =====================================================================
@@ -28,16 +29,16 @@ angular.module('todoController', [])
 				$scope.clients = data; // assign our new list of todos
 			});
 
-			$scope.formData.client_id="123456";
-			$scope.formData.client_name="Nancy";
+			$scope.formData1.client_id="123456";
+			$scope.formData1.client_name="Nancy";
 		
 
-		Clients.create($scope.formData)
+		Clients.create($scope.formData1)
 
 			// if successful creation, call our get function to get all the new todos
 			.success(function(data) {
 				$scope.loading = false;
-				$scope.formData = {}; // clear the form so our user is ready to enter another
+				$scope.formData1 = {}; // clear the form so our user is ready to enter another
 				$scope.clients = data; // assign our new list of todos
 			});
 		// CREATE ==================================================================
