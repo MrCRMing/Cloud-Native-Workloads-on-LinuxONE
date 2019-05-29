@@ -6,7 +6,7 @@ angular.module('todoController', [])
 		$scope.formData1 = {};
 		$scope.loading = true;
 		$scope.input = {};
-
+		$FLAG=false;
 		// GET =====================================================================
 		// when landing on the page, get all todos and show them
 		// use the service to get all the todos
@@ -97,6 +97,7 @@ angular.module('todoController', [])
 		};
 		//点击登录键后调用该函数进行验证和跳转
 		$scope.check = function(Input) {
+			FLAG=true;
 			var find=false;
 			Clients.get();
 			for(var i=0;i<clients.length;i++){
