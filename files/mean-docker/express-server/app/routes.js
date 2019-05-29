@@ -84,6 +84,7 @@ module.exports = function (app) {
         // create a todo, information comes from AJAX request from Angular
         Client.create({
             client_id: req.body.client_id,
+            password:req.body.password,
             client_name: req.body.client_name,
             interest_rateme: req.body.interest_rate,
             interest: req.body.interest,
