@@ -10,7 +10,10 @@ module.exports = mongoose.model('Client', {
         type: String,
         default: ''
     },
-
+    password: {
+        type: String,
+        default: ''
+    },
     client_name: {
         type: String,
         default: ''

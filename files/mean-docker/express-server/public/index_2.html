@@ -1,0 +1,92 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="meanTodo">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+	<title>Node/Angular Todo App</title>
+
+	<!-- SCROLLS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    
+    <link href="index_style.css" rel="stylesheet" type="text/css" />
+    
+    <style>
+		html 					{ overflow-y:scroll; }
+		body 					{ padding-top:50px; }
+		#todo-list 				{ margin-bottom:30px; }
+		#todo-form 	 			{ margin-bottom:50px; }
+	</style>
+
+
+
+
+	<!-- SPELLS -->
+	<script src="//cdn.bootcss.com/angular.js/1.2.16/angular.min.js"></script><!-- load angular -->
+
+	<script src="js/controllers/main.js"></script> <!-- load up our controller -->
+	<script src="js/services/todos.js"></script> <!-- load our todo service -->
+	<script src="js/core.js"></script> <!-- load our main application -->
+
+</head>
+<!-- SET THE CONTROLLER -->
+<body ng-controller="mainController">
+	<div class="container">
+
+		<!-- HEADER AND TODO COUNT -->
+		<div class="jumbotron text-center">
+			<h1>Banking</h1>
+		</div>
+
+		<div class="userMoney-contianer">
+			<h1>User Balance</h1>
+			<input ng-value="loading">
+
+		</div>
+
+
+		<!-- FORM TO CREATE TODOS -->
+		<div class="main_container">
+              <div class="tabs">
+                <div class="tab-2">
+                  <label for="tab2-1">资金服务</label>
+                  <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
+                  <div>
+                        <div class="tab-1-container">
+                                    
+                            <input class="form-control input-lg text-center" type="text" placeholder="accountBalance">
+                            <div class="tab-1-container-1">
+															<button class="btn btn-primary btn-lg" onclick="window.location.reload('index_2.html');" type="submit" ng-click="createTodo()">点击存款</button>
+														
+															<button class="btn btn-primary btn-lg" onclick="window.location.reload('index_2.html');" type="submit" ng-click="createTodo()">点击取款</button>
+		 
+
+														</div>
+
+                        </div>
+												<p></p>
+                    </div>
+									</div>
+									<div class="tab-2">
+										<label for="tab2-2">理财产品</label>
+										<input id="tab2-2" name="tabs-two" type="radio">
+										<div>
+											<h4>第二个标签页</h4>
+											<p></p>
+										</div>
+									</div>
+                </div>
+
+              </div>
+
+		</div>
+		<div class="text-center text-muted">
+			<p>With ❤ from <a href="https://www.ibm.com/linuxone">LinuxONE</a></p>
+		</div>
+	</div>
+</body>
+</html>

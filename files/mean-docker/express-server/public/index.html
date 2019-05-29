@@ -19,6 +19,9 @@
 		#todo-form 	 			{ margin-bottom:50px; }
 	</style>
 
+
+
+
 	<!-- SPELLS -->
 	<script src="//cdn.bootcss.com/angular.js/1.2.16/angular.min.js"></script><!-- load angular -->
 
@@ -35,26 +38,9 @@
 
 		<!-- HEADER AND TODO COUNT -->
 		<div class="jumbotron text-center">
-			<h1>Hi let us make an app for banks<span class="label label-info">{{ clients.length }}</span></h1>
+			<h1>Banking Login</h1>
 		</div>
 
-		<!-- TODO LIST -->
-		<div id="todo-list" class="row">
-			<div class="col-sm-4 col-sm-offset-4">
-
-				<!-- LOOP OVER THE TODOS IN $scope.todos -->
-				<div class="checkbox" ng-repeat="client in clients">
-					<label>
-						<input type="checkbox" > {{ client.client_name }}
-					</label>
-				</div>
-
-				<p class="text-center" ng-show="loading">
-					<span class="fa fa-spinner fa-spin fa-3x"></span>
-				</p>
-
-			</div>
-		</div>
 
 		<!-- FORM TO CREATE TODOS -->
 		<div id="todo-form" class="row">
@@ -63,17 +49,17 @@
 					<div class="form-group">
 
 						<!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
-						<input type="text" class="form-control input-lg text-center" placeholder="todo's go here" ng-model="formData.text">
+						<input type="text" class="form-control input-lg text-center" placeholder="Account Number" ng-model="input.client_id">
 
 
 
-						<input type="text" class="form-control " placeholder="todo's go here" ng-model="formData.value">
+						<input type="text" class="form-control input-lg text-center " placeholder="User Password" ng-model="input.password">
 
 
 					</div>
 
 					<!-- createToDo() WILL CREATE NEW TODOS -->
-					<button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add21</button>
+					<button onClick="check(input)" type="submit" class="btn btn-primary btn-lg" >Login1</button>
 				</form>
 			</div>
 		</div>

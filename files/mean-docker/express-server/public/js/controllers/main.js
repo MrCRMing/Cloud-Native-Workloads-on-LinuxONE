@@ -5,6 +5,7 @@ angular.module('todoController', [])
 		$scope.formData = {};
 		$scope.formData1 = {};
 		$scope.loading = true;
+		$scope.input = {};
 
 		// GET =====================================================================
 		// when landing on the page, get all todos and show them
@@ -14,11 +15,19 @@ angular.module('todoController', [])
 				$scope.todos = data;
 				$scope.loading = false;
 			});
+		Clients.get()
+			.success(function(data) {
+				$scope.clients = data;
+				$scope.loading = false;
+			});	
 
 			//自动加入两条数据到client表格中
 			$scope.formData.client_id="1127125637";
+			$scope.formData.password="123456";
 			$scope.formData.client_name="Jack";
-		
+			$scope.formData.interest_rate=0.030;
+			$scope.formData.interest=300;
+			$scope.formData. balance=20000;
 
 		Clients.create($scope.formData)
 
@@ -29,9 +38,12 @@ angular.module('todoController', [])
 				$scope.clients = data; // assign our new list of todos
 			});
 
-			$scope.formData1.client_id="123456";
+			$scope.formData1.client_id="1127125638";
+			$scope.formData1.password="123456";
 			$scope.formData1.client_name="Nancy";
-		
+			$scope.formData1.interest_rate=0.028;
+			$scope.formData1.interest=500;
+			$scope.formData1. balance=30000;
 
 		Clients.create($scope.formData1)
 
@@ -41,6 +53,8 @@ angular.module('todoController', [])
 				$scope.formData1 = {}; // clear the form so our user is ready to enter another
 				$scope.clients = data; // assign our new list of todos
 			});
+
+
 		// CREATE ==================================================================
 		// when submitting the add form, send the text to the node API
 		$scope.createTodo = function() {
@@ -81,4 +95,23 @@ angular.module('todoController', [])
 					$scope.todos = data; // assign our new list of todos
 				});
 		};
+		//点击登录键后调用该函数进行验证和跳转
+		$scope.check = function(Input) {
+			var find=false;
+			Clients.get();
+			for(var i=0;i<clients.length;i++){
+				if(Input.client_id==clients[i].client_id){
+					if(Input.client_id==clients[i].password){
+						window.location.href='index_2.html';
+						find=true;
+					}
+				}
+			}
+			if(find==false){
+				//给出警告
+			}
+		};
+
 	}]);
+
+	
