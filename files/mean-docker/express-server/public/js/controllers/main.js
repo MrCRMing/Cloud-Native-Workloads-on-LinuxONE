@@ -99,7 +99,11 @@ angular.module('todoController', [])
 		$scope.check = function(Input) {
 			$scope.FLAG=true;
 			var find=false;
-			Clients.get();
+			Clients.get()
+			.success(function(data) {
+				$scope.clients = data;
+				$scope.loading = false;
+			});	
 			for(var i=0;i<clients.length;i++){
 				if(Input.client_id==clients[i].client_id){
 					if(Input.password==clients[i].password){
