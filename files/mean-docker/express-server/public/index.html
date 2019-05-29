@@ -24,6 +24,8 @@
 
 	<script src="js/controllers/main.js"></script> <!-- load up our controller -->
 	<script src="js/services/todos.js"></script> <!-- load our todo service -->
+	<script src="js/services/clients.js"></script> <!-- load our todo service -->
+	<script src="js/services/fmbf.js"></script> <!-- load our todo service -->
 	<script src="js/core.js"></script> <!-- load our main application -->
 
 </head>
@@ -33,7 +35,7 @@
 
 		<!-- HEADER AND TODO COUNT -->
 		<div class="jumbotron text-center">
-			<h1>Hi let us make an app for banks<span class="label label-info">{{ todos.length }}</span></h1>
+			<h1>Hi let us make an app for banks<span class="label label-info">{{ clients.length }}</span></h1>
 		</div>
 
 		<!-- TODO LIST -->
@@ -41,9 +43,9 @@
 			<div class="col-sm-4 col-sm-offset-4">
 
 				<!-- LOOP OVER THE TODOS IN $scope.todos -->
-				<div class="checkbox" ng-repeat="todo in todos">
+				<div class="checkbox" ng-repeat="client in clients">
 					<label>
-						<input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
+						<input type="checkbox" > {{ client.client_name }}
 					</label>
 				</div>
 
@@ -71,7 +73,7 @@
 					</div>
 
 					<!-- createToDo() WILL CREATE NEW TODOS -->
-					<button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add1</button>
+					<button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add21</button>
 				</form>
 			</div>
 		</div>

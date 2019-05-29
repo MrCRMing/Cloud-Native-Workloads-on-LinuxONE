@@ -1,7 +1,7 @@
 angular.module('todoController', [])
 
 	// inject the Todo service factory into our controller
-	.controller('mainController', ['$scope','$http','Todos', function($scope, $http, Todos) {
+	.controller('mainController', ['$scope','$http','Todos','Clients', function($scope, $http, Todos,Clients) {
 		$scope.formData = {};
 		$scope.loading = true;
 
@@ -13,15 +13,32 @@ angular.module('todoController', [])
 				$scope.todos = data;
 				$scope.loading = false;
 			});
-		$scope.formData.text="Data1";
-		$scope.formData.value="Data1";
-		Todos.create($scope.formData)
+
+			//自动加入两条数据到client表格中
+			$scope.formData.client_id="1127125637";
+			$scope.formData.client_name="Jack";
+		
+
+		Clients.create($scope.formData)
 
 			// if successful creation, call our get function to get all the new todos
 			.success(function(data) {
 				$scope.loading = false;
 				$scope.formData = {}; // clear the form so our user is ready to enter another
-				$scope.todos = data; // assign our new list of todos
+				$scope.clients = data; // assign our new list of todos
+			});
+
+			$scope.formData.client_id="123456";
+			$scope.formData.client_name="Nancy";
+		
+
+		Clients.create($scope.formData)
+
+			// if successful creation, call our get function to get all the new todos
+			.success(function(data) {
+				$scope.loading = false;
+				$scope.formData = {}; // clear the form so our user is ready to enter another
+				$scope.clients = data; // assign our new list of todos
 			});
 		// CREATE ==================================================================
 		// when submitting the add form, send the text to the node API
