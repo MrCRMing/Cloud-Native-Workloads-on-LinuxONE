@@ -70,12 +70,12 @@ angular.module('todoController', [])
 			$scope.FLAG1=3;
 			//构建新账号
 			$scope.temp.client_id=$scope.account.client_id;
-			$scope.temp.client_id=$scope.account.password;
-			$scope.temp.client_id=$scope.account.client_name;
-			$scope.temp.client_id=$scope.account.interest_rate;
-			$scope.temp.client_id=$scope.account.interest;
-			$scope.temp.client_id=$scope.account.last_modify_time;
-			$scope.temp.client_id=$scope.account.balance;
+			$scope.temp.password=$scope.account.password;
+			$scope.temp.client_name=$scope.account.client_name;
+			$scope.temp.interest_rate=$scope.account.interest_rate;
+			$scope.temp.interest=$scope.account.interest;
+			$scope.temp.last_modify_time=$scope.account.last_modify_time;
+			$scope.temp.balance=$scope.account.balance;
 
 			//添加新账号
 			Clients.create($scope.temp)
