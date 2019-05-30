@@ -7,6 +7,7 @@ angular.module('todoController', [])
 		$scope.loading = true;
 		$scope.input = {};
 		$scope.FLAG=1;
+		$scope.clients={};
 		// GET =====================================================================
 		// when landing on the page, get all todos and show them
 		// use the service to get all the todos
