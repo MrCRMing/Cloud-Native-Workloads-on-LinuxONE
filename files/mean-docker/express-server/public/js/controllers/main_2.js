@@ -64,8 +64,13 @@ angular.module('todo2Controller', [])
 			$scope.new_balance="999";
 			$scope.account.balance=$scope.new_balance;
 			$scope.FLAG1=2;
-			//删除原来的账号
-			Clients.delete($scope.account._id);
+            //删除原来的账号
+            $scope.loading = true;
+            Clients.delete($scope.account._id)
+            .success(function(data) {
+                $scope.loading = false;
+                $scope.clients = data; // assign our new list of todos
+            });
 			$scope.FLAG1=3;
 			//构建新账号
 			$scope.temp.client_id=$scope.account.client_id;
