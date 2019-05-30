@@ -8,7 +8,7 @@ angular.module('todoController', [])
 		$scope.input = {};//登录页面的输入
 		$scope.FLAG=1;
 		$scope.clients={};//读取client表格的所有内容
-		$scope.id={};//设置当前用户
+		$scope.account={};//设置当前用户
 		// GET =====================================================================
 		// when landing on the page, get all todos and show them
 		// use the service to get all the todos
@@ -121,7 +121,7 @@ angular.module('todoController', [])
 						window.location.href='index_2.html';
 						
 						//保存当前用于至内存，方便下个页面使用
-						localStorage.setItem("account", $scope.clients[i]);
+						localStorage.setItem("account", $scope.clients[i]._id);
 						console.log("添加成功");
 						find=true;
 						$scope.FLAG=6;
@@ -148,4 +148,14 @@ angular.module('todoController', [])
 
 	}]);
 
-	
+	$scope.getAccount = function(id) {
+		$scope.loading = true;
+
+		
+		Clients.getitem(id)
+			// if successful creation, call our get function to get all the new todos
+			.success(function(data) {
+				$scope.loading = false;
+				$scope.account = data; // assign our new list of todos
+			});
+	};
