@@ -4,12 +4,14 @@ angular.module('todoController', [])
 	.controller('mainController', ['$scope','$http','Todos','Clients', function($scope, $http, Todos,Clients) {
 		$scope.formData = {};//提前加载的数据
 		$scope.formData1 = {};//提前加载的数据
+		$scope.temp = {};//临时账户
 		$scope.loading = true;
 		$scope.input = {};//登录页面的输入
 		$scope.FLAG=1;
 		$scope.clients={};//读取client表格的所有内容
 		$scope.client_id=localStorage.getItem("account_id");
 		$scope.account={};//设置当前用户
+		$scope.money;//用于存款和取款
 		// GET =====================================================================
 		// when landing on the page, get all todos and show them
 		// use the service to get all the todos
@@ -25,7 +27,7 @@ angular.module('todoController', [])
 			});	
 
 
-			console.log($scope.clients.length);
+			//加载时先给数据库加上两条数据
 			$scope.formData.client_id="1";
 			$scope.formData.password="1";
 			$scope.formData.client_name="Jack";
@@ -78,13 +80,44 @@ angular.module('todoController', [])
 
 					for(var i=0;i<$scope.clients.length;i++){
 
-						if(id==$scope.clients[i]._id){
-							$scope.FLAG=8;
+						if(id==$scope.clients[i].client_id){
+
 							$scope.account=$scope.clients[i];
 						}
 					}
 		};
-			
+
+		//存款
+		$scope.deposit = function() {
+			//更改balance
+			$scope.new_balance=$scope.account.balance+$scope.money;
+			$scope.account.balance=$scope.new_balance;
+			//删除原来的账号
+			Clients.delete($scope.account._id);
+			//构建新账号
+			$scope.temp.client_id=$scope.account.client_id;
+			$scope.temp.client_id=$scope.account.password;
+			$scope.temp.client_id=$scope.account.client_name;
+			$scope.temp.client_id=$scope.account.interest_rate;
+			$scope.temp.client_id=$scope.account.interest;
+			$scope.temp.client_id=$scope.account.last_modify_time;
+			$scope.temp.client_id=$scope.account.balance;
+			//添加新账号
+			Clients.create($scope.formData1)
+			.success(function(data) {
+				$scope.loading = false;
+				$scope.temp = {}; 
+				$scope.clients = data; 
+			});
+			//重新确定当前账号
+			for(var i=0;i<$scope.clients.length;i++){
+
+				if($scope.client_id==$scope.clients[i].client_id){
+					$scope.account=$scope.clients[i];
+				}
+			}
+		};
+
 
 		// CREATE ==================================================================
 		// when submitting the add form, send the text to the node API
@@ -146,7 +179,7 @@ angular.module('todoController', [])
 						window.location.href='index_2.html';
 						
 						//保存当前用于至内存，方便下个页面使用
-						localStorage.setItem("account_id", $scope.clients[i]._id);
+						localStorage.setItem("account_id", $scope.clients[i].client_id);
 
 						find=true;
 						$scope.FLAG=6;
