@@ -28,7 +28,7 @@ angular.module('todoController', [])
 				$scope.loading = false;
 			});	
 
-			if($scope.clients.length==undefined){
+			if($scope.clients == null){
 				$scope.formData.client_id="1";
 				$scope.formData.password="1";
 				$scope.formData.client_name="Jack";
