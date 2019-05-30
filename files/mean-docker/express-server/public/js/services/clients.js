@@ -23,7 +23,7 @@ angular.module('clientService', [])
 			},
 			getitem:function(id)
 			{
-				return $http.get('/api/clients'+id);
+				return $http.get('/api/clients/'+id);
 			}
 		}
 	}]);
