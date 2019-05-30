@@ -62,7 +62,7 @@ angular.module('todoController', [])
 		//定义获得某个用户信息的函数
 		$scope.getAccount = function(id) {
 			$scope.loading = true;
-			$scope.FLAG=6;
+
 				//getitem函数貌似不太行 先用get函数替代
 			// Clients.getitem(id)
 			// 		// if successful creation, call our get function to get all the new todos
@@ -75,9 +75,9 @@ angular.module('todoController', [])
 						$scope.clients = data;
 						$scope.loading = false;
 					});	
-					$scope.FLAG=7;
+
 					for(var i=0;i<$scope.clients.length;i++){
-						$scope.FLAG=id;
+
 						if(id==$scope.clients[i]._id){
 							$scope.FLAG=8;
 							$scope.account=$scope.clients[i];
@@ -147,7 +147,7 @@ angular.module('todoController', [])
 						
 						//保存当前用于至内存，方便下个页面使用
 						localStorage.setItem("account_id", $scope.clients[i]._id);
-						console.log("添加成功");
+
 						find=true;
 						$scope.FLAG=6;
 					}
