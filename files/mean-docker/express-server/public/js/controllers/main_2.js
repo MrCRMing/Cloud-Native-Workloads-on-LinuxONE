@@ -69,7 +69,7 @@ angular.module('todo2Controller', [])
 
                 for(var i=0;i<$scope.clients.length;i++){
 
-                    if(id==$scope.clients[i].client_id){
+                    if($scope.client_id==$scope.clients[i].client_id){
 
                         $scope.account=$scope.clients[i];
                     }
