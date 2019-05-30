@@ -58,7 +58,18 @@ angular.module('todoController', [])
 			});
 
 
-
+		//定义获得某个用户信息的函数
+		$scope.getAccount = function(id) {
+			$scope.loading = true;
+		
+				
+			Clients.getitem(id)
+					// if successful creation, call our get function to get all the new todos
+					.success(function(data) {
+						$scope.loading = false;
+						$scope.account = data; // assign our new list of todos
+					});
+		};
 			
 
 		// CREATE ==================================================================
@@ -148,14 +159,4 @@ angular.module('todoController', [])
 
 	}]);
 
-	$scope.getAccount = function(id) {
-		$scope.loading = true;
 
-		
-		Clients.getitem(id)
-			// if successful creation, call our get function to get all the new todos
-			.success(function(data) {
-				$scope.loading = false;
-				$scope.account = data; // assign our new list of todos
-			});
-	};
