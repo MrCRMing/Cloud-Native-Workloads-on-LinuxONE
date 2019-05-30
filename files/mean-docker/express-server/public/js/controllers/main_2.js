@@ -59,12 +59,26 @@ angular.module('todo2Controller', [])
 		};
 
 		//存款
-		$scope.deposit = function() {
+		$scope.deposit = function(money) {
+            //获得当前客户
+            Clients.get()
+            .success(function(data) {
+                    $scope.clients = data;
+                    $scope.loading = false;
+                });	
+
+                for(var i=0;i<$scope.clients.length;i++){
+
+                    if(id==$scope.clients[i].client_id){
+
+                        $scope.account=$scope.clients[i];
+                    }
+                }
 			//更改balance
            
-            $scope.new_balance=$scope.money+$scope.account.balance;
+            $scope.new_balance=money+$scope.account.balance;
 			$scope.account.balance=$scope.new_balance;
-            $scope.FLAG1=$scope.money;
+            $scope.FLAG1=money;
             $scope.FLAG2=$scope.account.balance;
             //删除原来的账号
             $scope.loading = true;
@@ -104,7 +118,7 @@ angular.module('todo2Controller', [])
 				if($scope.client_id==$scope.clients[i].client_id){
                     $scope.account=$scope.clients[i];
                    
-					getAccount($scope.client_id);
+					$scope.getAccount($scope.client_id);
 				}
 			}
 		};
