@@ -39,14 +39,15 @@ angular.module('todoController', [])
 				$scope.formData. balance=20000;
 	
 			Clients.create($scope.formData)
-	
+				
 				// if successful creation, call our get function to get all the new todos
 				.success(function(data) {
 					$scope.loading = false;
 					$scope.formData = {}; // clear the form so our user is ready to enter another
 					$scope.clients = data; // assign our new list of todos
 				});
-	
+				$scope.formData={};
+
 				$scope.formData1.client_id="2";
 				$scope.formData1.password="2";
 				$scope.formData1.client_name="Nancy";
@@ -62,6 +63,7 @@ angular.module('todoController', [])
 					$scope.formData1 = {}; // clear the form so our user is ready to enter another
 					$scope.clients = data; // assign our new list of todos
 				});
+				$scope.formData1={};
 			}		
 
 
