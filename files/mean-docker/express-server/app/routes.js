@@ -106,7 +106,7 @@ module.exports = function (app) {
 
     // delete a todo
     app.delete('/api/clients/:client_id', function (req, res) {
-        Todo.remove({
+        Client.remove({
             _id: req.params.client_id
         }, function (err, client) {
             if (err)
