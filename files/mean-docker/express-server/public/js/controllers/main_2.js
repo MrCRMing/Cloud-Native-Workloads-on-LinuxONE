@@ -61,7 +61,7 @@ angular.module('todo2Controller', [])
 		//存款
 		$scope.deposit = function() {
 			//更改balance
-			$scope.new_balance=$scope.account.balance+$scope.money;
+			$scope.new_balance="999";
 			$scope.account.balance=$scope.new_balance;
 			$scope.FLAG1=2;
 			//删除原来的账号
@@ -114,10 +114,6 @@ angular.module('todo2Controller', [])
 						$scope.todos = data; // assign our new list of todos
 					});
 
-
-
-
-
 			}
 
 
@@ -135,52 +131,7 @@ angular.module('todo2Controller', [])
 					$scope.todos = data; // assign our new list of todos
 				});
 		};
-		//点击登录键后调用该函数进行数据库数据初始化和账户验证以及跳转
-		$scope.check = function(Input) {
-			//当无数据时先给数据库加上两条数据
-				
-
-			var find=false;
-			Clients.get()
-			.success(function(data) {
-				$scope.clients = data;
-				$scope.loading = false;
-				$scope.FLAG=3;
-			});	
-			$scope.FLAG=4;
-			for(var i=0;i<$scope.clients.length;i++){
-				if(Input.client_id==$scope.clients[i].client_id){
-					$scope.FLAG=5;
-
-					if(Input.password==$scope.clients[i].password){
-
-						window.location.href='index_2.html';
-						
-						//保存当前用于至内存，方便下个页面使用
-						localStorage.setItem("account_id", $scope.clients[i].client_id);
-
-						find=true;
-						$scope.FLAG=6;
-					}
-				}
-
-			}
-			$scope.FLAG=7;
-			if(find==false){
-				//给出警告
-
-				var traget=document.getElementById("false-code");
-				if(traget.style.display=="none"){
-						traget.style.display="inline";
-				}else{
-						traget.style.display="none";
 		
-			  }
-
-
-
-			}
-		};
 
 	}]);
 
