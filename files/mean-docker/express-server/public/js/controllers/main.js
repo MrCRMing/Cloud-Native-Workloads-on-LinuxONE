@@ -25,7 +25,7 @@ angular.module('todoController', [])
 			});	
 
 
-				console.log($scope.clients.length);
+			console.log($scope.clients.length);
 			$scope.formData.client_id="1";
 			$scope.formData.password="1";
 			$scope.formData.client_name="Jack";
@@ -75,9 +75,11 @@ angular.module('todoController', [])
 						$scope.clients = data;
 						$scope.loading = false;
 					});	
-
+					FLAG=7;
 					for(var i=0;i<$scope.clients.length;i++){
+						FLAG=id;
 						if(id==$scope.clients[i]._id){
+							FLAG=8;
 							account=$scope.clients[i];
 						}
 					}
