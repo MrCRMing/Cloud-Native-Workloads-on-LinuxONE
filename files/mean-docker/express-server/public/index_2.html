@@ -56,10 +56,10 @@
 		<div class="userMoney-contianer">
 			<h1>User Balance</h1>
 
+
+			<button class="btn btn-primary btn-lg" type="submit" ng-click="getAccount(client_id)">显示余额</button>
 			<h1 id="test">{{account.balance}}  
-			</h1>
-
-
+				</h1>
 
 		</div>
 
@@ -105,9 +105,7 @@
 	</div>
 	<script>
 
-			var client_id=localStorage.getItem("account");
-			var test = document.getElementById("test"); 
-			{{getAccount(client_id);}}
+
 
 	</script>
 </body>
