@@ -25,8 +25,8 @@ angular.module('todoController', [])
 
 
 				console.log($scope.clients.length);
-			$scope.formData.client_id="1127125637";
-			$scope.formData.password="123456";
+			$scope.formData.client_id="1";
+			$scope.formData.password="1";
 			$scope.formData.client_name="Jack";
 			$scope.formData.interest_rate=0.030;
 			$scope.formData.interest=300;
@@ -41,8 +41,8 @@ angular.module('todoController', [])
 				$scope.clients = data; // assign our new list of todos
 			});
 
-			$scope.formData1.client_id="1127125638";
-			$scope.formData1.password="123456";
+			$scope.formData1.client_id="2";
+			$scope.formData1.password="2";
 			$scope.formData1.client_name="Nancy";
 			$scope.formData1.interest_rate=0.028;
 			$scope.formData1.interest=500;
@@ -117,9 +117,11 @@ angular.module('todoController', [])
 					$scope.FLAG=5;
 
 					if(Input.password==$scope.clients[i].password){
-						$scope.account=$scope.clients[i];//保存当前用户至全局变量中
-						window.location.href='index_2.html?_id='+$scope.clients[i]._id;
 
+						window.location.href='index_2.html';
+						//保存当前用于至内存，方便下个页面使用
+						localStorage.setItem("account", $scope.clients[i]);
+						console.log("添加成功");
 						find=true;
 						$scope.FLAG=6;
 					}

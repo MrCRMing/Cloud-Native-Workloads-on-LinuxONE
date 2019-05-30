@@ -27,21 +27,10 @@
 
 	<!-- SPELLS -->
 	<script type="text/javascript" src="js/jquery/jquery-1.12.1.min.js"></script><!-- 获得另一个页面传过来的用户id值 -->
-	<script type="text/javascript">
-		$(function(){
+	<script>
+	var client=localStorage.getItem("account");
+	</script>
 
-		$("#show").html(oneValues());
-		})
-		
-		//接收一个值
-		function oneValues(){
-		var result;
-		var url=window.location.search; //获取url中"?"符后的字串  
-		if(url.indexOf("?")!=-1){
-		result = url.substr(url.indexOf("=")+1);
-		}
-		return result;
-		}
 	</script>
 	<script src="//cdn.bootcss.com/angular.js/1.2.16/angular.min.js"></script><!-- load angular -->
 
@@ -65,7 +54,7 @@
 
 		<div class="userMoney-contianer">
 			<h1>User Balance</h1>
-			<h1>{{}}</h1>
+			<h1>client.name</h1>
 		</div>
 
 
