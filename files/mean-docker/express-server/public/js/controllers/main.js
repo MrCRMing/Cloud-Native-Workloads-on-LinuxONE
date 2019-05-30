@@ -2,12 +2,13 @@ angular.module('todoController', [])
 
 	// inject the Todo service factory into our controller
 	.controller('mainController', ['$scope','$http','Todos','Clients', function($scope, $http, Todos,Clients) {
-		$scope.formData = {};
-		$scope.formData1 = {};
+		$scope.formData = {};//提前加载的数据
+		$scope.formData1 = {};//提前加载的数据
 		$scope.loading = true;
-		$scope.input = {};
+		$scope.input = {};//登录页面的输入
 		$scope.FLAG=1;
-		$scope.clients={};
+		$scope.clients={};//读取client表格的所有内容
+		$scope.account={};//设置当前用户
 		// GET =====================================================================
 		// when landing on the page, get all todos and show them
 		// use the service to get all the todos
@@ -108,14 +109,12 @@ angular.module('todoController', [])
 			});	
 			$scope.FLAG=4;
 			for(var i=0;i<$scope.clients.length;i++){
-				console.log("进入1")
 				if(Input.client_id==$scope.clients[i].client_id){
 					$scope.FLAG=5;
-					console.log("进入2")
 
 					if(Input.password==$scope.clients[i].password){
+						$scope.account=$scope.clients[i];//保存当前用户至全局变量中
 						window.location.href='index_2.html';
-						console.log("进入3")
 
 						find=true;
 						$scope.FLAG=6;
