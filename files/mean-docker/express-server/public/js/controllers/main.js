@@ -78,7 +78,7 @@ angular.module('todoController', [])
 			$scope.temp.client_id=$scope.account.balance;
 
 			//添加新账号
-			Clients.create($scope.formData1)
+			Clients.create($scope.temp)
 			.success(function(data) {
 				$scope.loading = false;
 				$scope.temp = {}; 
