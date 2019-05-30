@@ -1,7 +1,7 @@
-angular.module('todoController', [])
+angular.module('todo2Controller', [])
 
 	// inject the Todo service factory into our controller
-	.controller('mainController', ['$scope','$http','Todos','Clients', function($scope, $http, Todos,Clients) {
+	.controller('main2Controller', ['$scope','$http','Todos','Clients', function($scope, $http, Todos,Clients) {
 		$scope.formData = {};//提前加载的数据
 		$scope.formData1 = {};//提前加载的数据
 		$scope.temp = {};//临时账户
@@ -28,42 +28,7 @@ angular.module('todoController', [])
 				$scope.loading = false;
 			});	
 
-			if(JSON.parse($scope.clients) == null){
-				$scope.formData.client_id="1";
-				$scope.formData.password="1";
-				$scope.formData.client_name="Jack";
-				$scope.formData.interest_rate=0.030;
-				$scope.formData.interest=300;
-				$scope.formData. balance=20000;
-	
-			Clients.create($scope.formData)
 				
-				// if successful creation, call our get function to get all the new todos
-				.success(function(data) {
-					$scope.loading = false;
-					$scope.formData = {}; // clear the form so our user is ready to enter another
-					$scope.clients = data; // assign our new list of todos
-				});
-				$scope.formData={};
-
-				$scope.formData1.client_id="2";
-				$scope.formData1.password="2";
-				$scope.formData1.client_name="Nancy";
-				$scope.formData1.interest_rate=0.028;
-				$scope.formData1.interest=500;
-				$scope.formData1. balance=30000;
-	
-			Clients.create($scope.formData1)
-			
-	
-				// if successful creation, call our get function to get all the new todos
-				.success(function(data) {
-					$scope.loading = false;
-					$scope.formData1 = {}; // clear the form so our user is ready to enter another
-					$scope.clients = data; // assign our new list of todos
-				});
-				$scope.formData1={};
-			}		
 
 
 
