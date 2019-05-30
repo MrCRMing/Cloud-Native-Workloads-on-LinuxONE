@@ -46,7 +46,7 @@
 		<!-- FORM TO CREATE TODOS -->
 		<div id="todo-form" class="row">
 			<div class="col-sm-8 col-sm-offset-2 text-center">
-				<form style="display: flex;flex-direction: column;justify-content: center">
+				<form style="display: flex;flex-direction: column;justify-content: center;align-items: center">
 					<div class="form-group">
 
 						<!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
@@ -61,7 +61,7 @@
 
 					<!-- createToDo() WILL CREATE NEW TODOS -->
 					<button  type="submit" class="btn btn-primary btn-lg" style="width: 100px"  ng-click="check(input)">{{FLAG}}</button>
-					<h1 style="display: none;" id="false-code">账号或密码错误</h1>
+					<h1 style="display: none; font-size:16px;color:red" id="false-code">账号或密码错误</h1>
 				</form>
 			</div>
 		</div>
