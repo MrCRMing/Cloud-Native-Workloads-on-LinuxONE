@@ -28,7 +28,6 @@ angular.module('todoController', [])
 				$scope.loading = false;
 			});	
 
-			$scope.FLAG2=2;
 			
 
 
@@ -139,7 +138,7 @@ angular.module('todoController', [])
 		//点击登录键后调用该函数进行数据库数据初始化和账户验证以及跳转
 		$scope.check = function(Input) {
 			//当无数据时先给数据库加上两条数据
-			if($scope.clients.length==undefined||$scope.clients.length==0){
+			if($scope.clients.length!=2){
 				$scope.formData.client_id="1";
 				$scope.formData.password="1";
 				$scope.formData.client_name="Jack";
@@ -149,12 +148,7 @@ angular.module('todoController', [])
 	
 			Clients.create($scope.formData)
 				
-				// if successful creation, call our get function to get all the new todos
-				.success(function(data) {
-					$scope.loading = false;
-					$scope.formData = {}; // clear the form so our user is ready to enter another
-					$scope.clients = data; // assign our new list of todos
-				});
+		
 				$scope.formData={};
 
 				$scope.formData1.client_id="2";
@@ -166,14 +160,7 @@ angular.module('todoController', [])
 	
 			Clients.create($scope.formData1)
 	
-				// if successful creation, call our get function to get all the new todos
-				.success(function(data) {
-					$scope.loading = false;
-					$scope.formData1 = {}; // clear the form so our user is ready to enter another
-					$scope.clients = data; // assign our new list of todos
-				});
-				$scope.formData1={};
-			}		
+			}	
 
 			var find=false;
 			Clients.get()
