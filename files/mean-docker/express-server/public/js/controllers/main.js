@@ -28,9 +28,9 @@ angular.module('todoController', [])
 				$scope.loading = false;
 			});	
 
-			$scope.FLAG2=$scope.clients.length;
+			$scope.FLAG2=2;
 			//当无数据时先给数据库加上两条数据
-			if($scope.clients.length==0){
+			if($scope.clients==undefined){
 				$scope.formData.client_id="1";
 				$scope.formData.password="1";
 				$scope.formData.client_name="Jack";
