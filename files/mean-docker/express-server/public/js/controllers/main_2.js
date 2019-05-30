@@ -70,8 +70,9 @@ angular.module('todo2Controller', [])
             .success(function(data) {
                 $scope.loading = false;
                 $scope.clients = data; // assign our new list of todos
+                $scope.FLAG1=555;
             });
-			$scope.FLAG1=3;
+			
 			//构建新账号
 			$scope.temp.client_id=$scope.account.client_id;
 			$scope.temp.password=$scope.account.password;
@@ -88,13 +89,13 @@ angular.module('todo2Controller', [])
 				$scope.temp = {}; 
 				$scope.clients = data; 
 			});
-			$scope.FLAG1=4;
+			
 			//重新确定当前账号
 			for(var i=0;i<$scope.clients.length;i++){
 				$scope.FLAG1=5;
 				if($scope.client_id==$scope.clients[i].client_id){
 					$scope.account=$scope.clients[i];
-					$scope.FLAG1=6;
+					
 				}
 			}
 		};
