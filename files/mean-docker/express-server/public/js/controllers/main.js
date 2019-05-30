@@ -119,8 +119,9 @@ angular.module('todoController', [])
 					if(Input.password==$scope.clients[i].password){
 
 						window.location.href='index_2.html';
+						
 						//保存当前用于至内存，方便下个页面使用
-						localStorage.setItem("account", $scope.clients[i]);
+						localStorage.setItem("account", $scope.clients[i]._id);
 						console.log("添加成功");
 						find=true;
 						$scope.FLAG=6;

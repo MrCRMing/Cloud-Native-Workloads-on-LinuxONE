@@ -30,9 +30,9 @@
 
 	<script>
 
-	var client=localStorage.getItem("account");
+	var client_id=localStorage.getItem("account");
 	var test = document.getElementById("test"); 
-	test.innerHTML = client.balance; 
+	test.innerHTML =client_id ; 
 	</script>
 
 
@@ -61,7 +61,8 @@
 		<div class="userMoney-contianer">
 			<h1>User Balance</h1>
 
-			<h1 id="test"></h1>
+			<div id="test">  
+				</div>
 
 
 
