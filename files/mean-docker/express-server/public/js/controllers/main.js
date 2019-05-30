@@ -130,6 +130,7 @@ angular.module('todoController', [])
 				//给出警告
 
 				var traget=document.getElementById("false-code");
+<<<<<<< HEAD
 
 
  
@@ -139,6 +140,13 @@ angular.module('todoController', [])
 						traget.style.display="none";
 		
 			  }
+=======
+				if(traget.style.display=="none"){
+					traget.style.display="inline";
+				}else{
+					traget.style.display="none";
+				}
+>>>>>>> 64dfd33d26f9e3a9d406f7d2036084313716d602
 
 
 			}
