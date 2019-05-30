@@ -17,16 +17,7 @@ angular.module('todoController', [])
 		// GET =====================================================================
 		// when landing on the page, get all todos and show them
 		// use the service to get all the todos
-		Todos.get()
-			.success(function(data) {
-				$scope.todos = data;
-				$scope.loading = false;
-			});
-		Clients.get()
-			.success(function(data) {
-				$scope.clients = data;
-				$scope.loading = false;
-			});	
+
 
 			$scope.FLAG2=2;
 			//当无数据时先给数据库加上两条数据
