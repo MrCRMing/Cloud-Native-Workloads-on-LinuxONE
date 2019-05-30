@@ -61,7 +61,8 @@ angular.module('todo2Controller', [])
 		//存款
 		$scope.deposit = function() {
 			//更改balance
-			$scope.new_balance=parseInt($scope.account.balance)+parseInt($scope.money);
+            $scope.sum=parseInt($scope.account.balance)+parseInt($scope.money);
+            $scope.new_balance=$scope.sum.toString();
 			$scope.account.balance=$scope.new_balance;
 			$scope.FLAG1=2;
             //删除原来的账号
