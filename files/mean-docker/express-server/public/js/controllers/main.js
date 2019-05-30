@@ -28,7 +28,7 @@ angular.module('todoController', [])
 				$scope.loading = false;
 			});	
 
-			if(JSON.parse($scope.clients) == null){
+
 				$scope.formData.client_id="1";
 				$scope.formData.password="1";
 				$scope.formData.client_name="Jack";
@@ -63,7 +63,7 @@ angular.module('todoController', [])
 					$scope.clients = data; // assign our new list of todos
 				});
 				$scope.formData1={};
-			}		
+				
 
 
 
