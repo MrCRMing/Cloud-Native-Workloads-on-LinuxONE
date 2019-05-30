@@ -29,7 +29,10 @@
 	<script type="text/javascript" src="js/jquery/jquery-1.12.1.min.js"></script><!-- 获得另一个页面传过来的用户id值 -->
 
 	<script>
+
 	var client=localStorage.getItem("account");
+	var test = document.getElementById("test"); 
+	test.innerHTML = client.balance; 
 	</script>
 
 
@@ -58,7 +61,7 @@
 		<div class="userMoney-contianer">
 			<h1>User Balance</h1>
 
-			<h1>client.name</h1>
+			<h1 id="test"></h1>
 
 
 
