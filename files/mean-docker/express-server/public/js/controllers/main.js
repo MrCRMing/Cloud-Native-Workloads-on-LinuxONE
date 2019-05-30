@@ -78,9 +78,9 @@ angular.module('todoController', [])
 					$scope.FLAG=7;
 					for(var i=0;i<$scope.clients.length;i++){
 						$scope.FLAG=id;
-						if(id==$scope.clients[i].client_id){
+						if(id==$scope.clients[i]._id){
 							$scope.FLAG=8;
-							account=$scope.clients[i];
+							$scope.account=$scope.clients[i];
 						}
 					}
 		};
@@ -146,7 +146,7 @@ angular.module('todoController', [])
 						window.location.href='index_2.html';
 						
 						//保存当前用于至内存，方便下个页面使用
-						localStorage.setItem("account_id", $scope.clients[i].client_id);
+						localStorage.setItem("account_id", $scope.clients[i]._id);
 						console.log("添加成功");
 						find=true;
 						$scope.FLAG=6;
