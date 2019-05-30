@@ -104,25 +104,26 @@ angular.module('todoController', [])
 			.success(function(data) {
 				$scope.clients = data;
 				$scope.loading = false;
+				$scope.FLAG=3;
 			});	
-			$scope.FLAG=3;
-			for(var i=0;i<clients.length;i++){
+			$scope.FLAG=4;
+			for(var i=0;i<$scope.clients.length;i++){
 				console.log("进入1")
-				if(Input.client_id==clients[i].client_id){
-					$scope.FLAG=4;
+				if(Input.client_id==$scope.clients[i].client_id){
+					$scope.FLAG=5;
 					console.log("进入2")
 
-					if(Input.password==clients[i].password){
+					if(Input.password==$scope.clients[i].password){
 						window.location.href='index_2.html';
 						console.log("进入3")
 
 						find=true;
-						$scope.FLAG=5;
+						$scope.FLAG=6;
 					}
 				}
 
 			}
-			$scope.FLAG=6;
+			$scope.FLAG=7;
 			if(find==false){
 				//给出警告
 			}
