@@ -23,8 +23,8 @@ angular.module('todoController', [])
 				$scope.loading = false;
 			});	
 
-		if($scope.clients.length==0){//当表格中没有数据的时候自动加入两条数据到client表格中
-				
+
+				console.log($scope.clients.length);
 			$scope.formData.client_id="1127125637";
 			$scope.formData.password="123456";
 			$scope.formData.client_name="Jack";
@@ -56,7 +56,8 @@ angular.module('todoController', [])
 				$scope.formData1 = {}; // clear the form so our user is ready to enter another
 				$scope.clients = data; // assign our new list of todos
 			});
-			}
+
+
 
 			
 
