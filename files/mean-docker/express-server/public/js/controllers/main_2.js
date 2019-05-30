@@ -8,7 +8,7 @@ angular.module('todo2Controller', [])
 		$scope.loading = true;
 		$scope.input = {};//登录页面的输入
 		$scope.FLAG=1;
-		$scope.FLAG1=1;
+		$scope.FLAG1=0;
 		$scope.FLAG2=0;
 		$scope.clients={};//读取client表格的所有内容
 		$scope.client_id=localStorage.getItem("account_id");
@@ -64,7 +64,8 @@ angular.module('todo2Controller', [])
            
             $scope.new_balance=$scope.money+$scope.account.balance;
 			$scope.account.balance=$scope.new_balance;
-			$scope.FLAG1=$scope.new_balance;
+            $scope.FLAG1=$scope.money;
+            $scope.FLAG2=$scope.account.balance;
             //删除原来的账号
             $scope.loading = true;
             Clients.delete($scope.account._id)
