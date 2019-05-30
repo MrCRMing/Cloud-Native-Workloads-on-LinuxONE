@@ -8,6 +8,7 @@ angular.module('todoController', [])
 		$scope.loading = true;
 		$scope.input = {};//登录页面的输入
 		$scope.FLAG=1;
+		$scope.FLAG1=1;
 		$scope.clients={};//读取client表格的所有内容
 		$scope.client_id=localStorage.getItem("account_id");
 		$scope.account={};//设置当前用户
@@ -64,7 +65,7 @@ angular.module('todoController', [])
 		//定义获得某个用户信息的函数
 		$scope.getAccount = function(id) {
 			$scope.loading = true;
-			$scope.FLAG=2;
+
 				//getitem函数貌似不太行 先用get函数替代
 			// Clients.getitem(id)
 			// 		// if successful creation, call our get function to get all the new todos
@@ -77,11 +78,11 @@ angular.module('todoController', [])
 						$scope.clients = data;
 						$scope.loading = false;
 					});	
-					$scope.FLAG=3;
+
 					for(var i=0;i<$scope.clients.length;i++){
-						$scope.FLAG=4;
+
 						if(id==$scope.clients[i].client_id){
-							$scope.FLAG=5;
+
 							$scope.account=$scope.clients[i];
 						}
 					}
@@ -92,8 +93,10 @@ angular.module('todoController', [])
 			//更改balance
 			$scope.new_balance=$scope.account.balance+$scope.money;
 			$scope.account.balance=$scope.new_balance;
+			$scope.FLAG1=2;
 			//删除原来的账号
 			Clients.delete($scope.account._id);
+			$scope.FLAG1=3;
 			//构建新账号
 			$scope.temp.client_id=$scope.account.client_id;
 			$scope.temp.client_id=$scope.account.password;
@@ -102,6 +105,7 @@ angular.module('todoController', [])
 			$scope.temp.client_id=$scope.account.interest;
 			$scope.temp.client_id=$scope.account.last_modify_time;
 			$scope.temp.client_id=$scope.account.balance;
+
 			//添加新账号
 			Clients.create($scope.formData1)
 			.success(function(data) {
@@ -109,11 +113,13 @@ angular.module('todoController', [])
 				$scope.temp = {}; 
 				$scope.clients = data; 
 			});
+			$scope.FLAG1=4;
 			//重新确定当前账号
 			for(var i=0;i<$scope.clients.length;i++){
-
+				$scope.FLAG1=5;
 				if($scope.client_id==$scope.clients[i].client_id){
 					$scope.account=$scope.clients[i];
+					$scope.FLAG1=6;
 				}
 			}
 		};
