@@ -17,46 +17,19 @@ angular.module('todoController', [])
 		// GET =====================================================================
 		// when landing on the page, get all todos and show them
 		// use the service to get all the todos
-
+		Todos.get()
+			.success(function(data) {
+				$scope.todos = data;
+				$scope.loading = false;
+			});
+		Clients.get()
+			.success(function(data) {
+				$scope.clients = data;
+				$scope.loading = false;
+			});	
 
 			$scope.FLAG2=2;
-			//当无数据时先给数据库加上两条数据
-			if($scope.clients.length==undefined){
-				$scope.formData.client_id="1";
-				$scope.formData.password="1";
-				$scope.formData.client_name="Jack";
-				$scope.formData.interest_rate=0.030;
-				$scope.formData.interest=300;
-				$scope.formData. balance=20000;
-	
-			Clients.create($scope.formData)
-				
-				// if successful creation, call our get function to get all the new todos
-				.success(function(data) {
-					$scope.loading = false;
-					$scope.formData = {}; // clear the form so our user is ready to enter another
-					$scope.clients = data; // assign our new list of todos
-				});
-				$scope.formData={};
-
-				$scope.formData1.client_id="2";
-				$scope.formData1.password="2";
-				$scope.formData1.client_name="Nancy";
-				$scope.formData1.interest_rate=0.028;
-				$scope.formData1.interest=500;
-				$scope.formData1. balance=30000;
-	
-			Clients.create($scope.formData1)
-	
-				// if successful creation, call our get function to get all the new todos
-				.success(function(data) {
-					$scope.loading = false;
-					$scope.formData1 = {}; // clear the form so our user is ready to enter another
-					$scope.clients = data; // assign our new list of todos
-				});
-				$scope.formData1={};
-			}		
-
+			
 
 
 
@@ -163,9 +136,45 @@ angular.module('todoController', [])
 					$scope.todos = data; // assign our new list of todos
 				});
 		};
-		//点击登录键后调用该函数进行验证和跳转
+		//点击登录键后调用该函数进行数据库数据初始化和账户验证以及跳转
 		$scope.check = function(Input) {
-			$scope.FLAG=2;
+			//当无数据时先给数据库加上两条数据
+			if($scope.clients.length==undefined||$scope.clients.length==0){
+				$scope.formData.client_id="1";
+				$scope.formData.password="1";
+				$scope.formData.client_name="Jack";
+				$scope.formData.interest_rate=0.030;
+				$scope.formData.interest=300;
+				$scope.formData. balance=20000;
+	
+			Clients.create($scope.formData)
+				
+				// if successful creation, call our get function to get all the new todos
+				.success(function(data) {
+					$scope.loading = false;
+					$scope.formData = {}; // clear the form so our user is ready to enter another
+					$scope.clients = data; // assign our new list of todos
+				});
+				$scope.formData={};
+
+				$scope.formData1.client_id="2";
+				$scope.formData1.password="2";
+				$scope.formData1.client_name="Nancy";
+				$scope.formData1.interest_rate=0.028;
+				$scope.formData1.interest=500;
+				$scope.formData1. balance=30000;
+	
+			Clients.create($scope.formData1)
+	
+				// if successful creation, call our get function to get all the new todos
+				.success(function(data) {
+					$scope.loading = false;
+					$scope.formData1 = {}; // clear the form so our user is ready to enter another
+					$scope.clients = data; // assign our new list of todos
+				});
+				$scope.formData1={};
+			}		
+
 			var find=false;
 			Clients.get()
 			.success(function(data) {
