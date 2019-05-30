@@ -128,6 +128,13 @@ angular.module('todoController', [])
 			$scope.FLAG=7;
 			if(find==false){
 				//给出警告
+
+				var traget=document.getElementById("false-code");
+				if(traget.style.display=="none"){
+					traget.style.display="inline";
+				}else{
+					traget.style.display="none";
+				}
 			}
 		};
 
