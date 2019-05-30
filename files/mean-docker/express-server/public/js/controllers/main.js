@@ -130,11 +130,22 @@ angular.module('todoController', [])
 				//给出警告
 
 				var traget=document.getElementById("false-code");
+<<<<<<< HEAD
 				if(traget.style.display=="none"){
 					traget.style.display="inline";
 				}else{
 					traget.style.display="none";
 				}
+=======
+ 
+				if(traget.style.display=="none"){
+						traget.style.display="inline";
+				}else{
+						traget.style.display="none";
+		
+			  }
+
+>>>>>>> 4f6b3f457f0b87685c3b1ed64d852eb65fbbe40d
 			}
 		};
 
