@@ -61,7 +61,7 @@ angular.module('todo2Controller', [])
 		//存款
 		$scope.deposit = function() {
 			//更改balance
-			$scope.new_balance="999";
+			$scope.new_balance=parseInt($scope.account.balance)+parseInt($scope.money);
 			$scope.account.balance=$scope.new_balance;
 			$scope.FLAG1=2;
             //删除原来的账号
@@ -102,7 +102,7 @@ angular.module('todo2Controller', [])
 				if($scope.client_id==$scope.clients[i].client_id){
                     $scope.account=$scope.clients[i];
                     $scope.FLAG1=666;
-					
+					getAccount(client_id);
 				}
 			}
 		};
