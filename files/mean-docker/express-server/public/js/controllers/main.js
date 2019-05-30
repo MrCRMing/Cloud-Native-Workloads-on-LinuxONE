@@ -131,10 +131,12 @@ angular.module('todoController', [])
 
 				var traget=document.getElementById("false-code");
 				if(traget.style.display=="none"){
-					traget.style.display="inline";
+						traget.style.display="inline";
 				}else{
-					traget.style.display="none";
-				}
+						traget.style.display="none";
+		
+			  }
+
 
 
 			}
