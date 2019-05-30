@@ -63,13 +63,24 @@ angular.module('todoController', [])
 		$scope.getAccount = function(id) {
 			$scope.loading = true;
 		
-				
-			Clients.getitem(id)
-					// if successful creation, call our get function to get all the new todos
-					.success(function(data) {
+				//getitem函数貌似不太行 先用get函数替代
+			// Clients.getitem(id)
+			// 		// if successful creation, call our get function to get all the new todos
+			// 		.success(function(data) {
+			// 			$scope.loading = false;
+			// 			$scope.account = data; // assign our new list of todos
+			// 		});
+			Clients.get()
+				.success(function(data) {
+						$scope.clients = data;
 						$scope.loading = false;
-						$scope.account = data; // assign our new list of todos
-					});
+					});	
+
+					for(var i=0;i<$scope.clients.length;i++){
+						if(id==$scope.clients[i].client_id){
+							account=$scope.clients[i];
+						}
+					}
 		};
 			
 
