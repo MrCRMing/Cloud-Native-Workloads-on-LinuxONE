@@ -8,7 +8,7 @@ angular.module('todoController', [])
 		$scope.input = {};//登录页面的输入
 		$scope.FLAG=1;
 		$scope.clients={};//读取client表格的所有内容
-		$scope.account={};//设置当前用户
+		$scope.id={};//设置当前用户
 		// GET =====================================================================
 		// when landing on the page, get all todos and show them
 		// use the service to get all the todos
@@ -23,7 +23,8 @@ angular.module('todoController', [])
 				$scope.loading = false;
 			});	
 
-			//自动加入两条数据到client表格中
+		if($scope.clients.length==0){//当表格中没有数据的时候自动加入两条数据到client表格中
+				
 			$scope.formData.client_id="1127125637";
 			$scope.formData.password="123456";
 			$scope.formData.client_name="Jack";
@@ -55,7 +56,9 @@ angular.module('todoController', [])
 				$scope.formData1 = {}; // clear the form so our user is ready to enter another
 				$scope.clients = data; // assign our new list of todos
 			});
+			}
 
+			
 
 		// CREATE ==================================================================
 		// when submitting the add form, send the text to the node API
@@ -114,7 +117,7 @@ angular.module('todoController', [])
 
 					if(Input.password==$scope.clients[i].password){
 						$scope.account=$scope.clients[i];//保存当前用户至全局变量中
-						window.location.href='index_2.html';
+						window.location.href='index_2.html?_id='+$scope.clients[i]._id;
 
 						find=true;
 						$scope.FLAG=6;
@@ -127,6 +130,13 @@ angular.module('todoController', [])
 				//给出警告
 
 				var traget=document.getElementById("false-code");
+<<<<<<< HEAD
+				if(traget.style.display=="none"){
+					traget.style.display="inline";
+				}else{
+					traget.style.display="none";
+				}
+=======
  
 				if(traget.style.display=="none"){
 						traget.style.display="inline";
@@ -135,6 +145,7 @@ angular.module('todoController', [])
 		
 			  }
 
+>>>>>>> 4f6b3f457f0b87685c3b1ed64d852eb65fbbe40d
 			}
 		};
 
