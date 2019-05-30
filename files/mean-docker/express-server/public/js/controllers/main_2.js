@@ -104,7 +104,7 @@ angular.module('todo2Controller', [])
 				if($scope.client_id==$scope.clients[i].client_id){
                     $scope.account=$scope.clients[i];
                    
-					$scope.getAccount(client_id);
+					getAccount($scope.client_id);
 				}
 			}
 		};
