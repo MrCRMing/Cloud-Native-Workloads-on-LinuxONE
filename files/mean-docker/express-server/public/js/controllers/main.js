@@ -62,7 +62,7 @@ angular.module('todoController', [])
 		//定义获得某个用户信息的函数
 		$scope.getAccount = function(id) {
 			$scope.loading = true;
-			FLAG=6;
+			$scope.FLAG=6;
 				//getitem函数貌似不太行 先用get函数替代
 			// Clients.getitem(id)
 			// 		// if successful creation, call our get function to get all the new todos
@@ -75,11 +75,11 @@ angular.module('todoController', [])
 						$scope.clients = data;
 						$scope.loading = false;
 					});	
-					FLAG=7;
+					$scope.FLAG=7;
 					for(var i=0;i<$scope.clients.length;i++){
-						FLAG=id;
+						$scope.FLAG=id;
 						if(id==$scope.clients[i]._id){
-							FLAG=8;
+							$scope.FLAG=8;
 							account=$scope.clients[i];
 						}
 					}
