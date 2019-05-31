@@ -147,6 +147,8 @@ angular.module('todo2Controller', [])
                     }
 				}
 				console.log("取款")
+				var traget=document.getElementById("accountLestThanZero");
+				traget.style.display="none";
 
 			//更改balance
            if($scope.account.balance>=Number(money)){
