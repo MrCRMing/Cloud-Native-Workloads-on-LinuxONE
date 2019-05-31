@@ -382,6 +382,7 @@ angular.module('todo2Controller', [])
 				invest.innerHTML=$scope.currentProduct.balance;
 				var benifit=document.getElementById("benifit1");
 				benifit.innerHTML=$scope.currentProduct.interest;
+				console.log("s1");
 				$scope.showfb1();
 
 			}else{
@@ -389,6 +390,7 @@ angular.module('todo2Controller', [])
 				invest.innerHTML=$scope.currentProduct.balance;
 				var benifit=document.getElementById("benifit2");
 				benifit.innerHTML=$scope.currentProduct.interest;
+				console.log("s2");
 				$scope.showfb2();
 			}
 
