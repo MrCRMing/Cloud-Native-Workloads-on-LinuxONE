@@ -342,7 +342,10 @@ angular.module('todo2Controller', [])
 						$scope.currentProduct=$scope.fmbfs[i];
 				}
 			}
-	
+			var invest=document.getElementById("invest1");
+			invest.innerHTML=$scope.currentProduct.balance;
+			var benifit=document.getElementById("benifit1");
+			benifit.innerHTML=$scope.currentProduct.interest;
 
 
 		};
