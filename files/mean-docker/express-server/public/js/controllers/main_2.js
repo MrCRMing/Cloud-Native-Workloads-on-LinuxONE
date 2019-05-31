@@ -309,6 +309,7 @@ angular.module('todo2Controller', [])
 				}
 			}
 
+			
 			var invest=document.getElementById("invest2");
 
 			invest.innerHTML=$scope.currentProduct.balance;
