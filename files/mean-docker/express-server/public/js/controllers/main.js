@@ -130,7 +130,7 @@ angular.module('todoController', [])
 				$scope.formData.interest=$scope.formData.interest_rate*$scope.formData. balance;
 				$scope.formData.begin_date=new Date();
 				$scope.formData.store_time=50;
-
+				
 			Fmbfs.create($scope.formData)
 			
 	
@@ -140,7 +140,7 @@ angular.module('todoController', [])
 					$scope.formData = {}; // clear the form so our user is ready to enter another
 					$scope.fmbfs = data; // assign our new list of todos
 				});
-				$scope.FLAG=$scope.formData.begin_date.getDate();
+				
 		//定义获得某个用户信息的函数
 		$scope.getAccount = function(id) {
 			$scope.loading = true;
