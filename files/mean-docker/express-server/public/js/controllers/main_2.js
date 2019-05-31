@@ -265,7 +265,7 @@ angular.module('todo2Controller', [])
 				}
 			}
 
-			console.log(currentProduct)
+			console.log($scope.currentProduct)
 
 		};
 
