@@ -17,7 +17,13 @@
     
     <style>
 		html 					{ overflow-y:scroll; }
-		body 					{ padding-top:50px; }
+		body 					{
+			 padding-top:50px; 
+			 background:url(./background111.jpeg)  no-repeat center center;
+			 background-size:cover;
+   			background-attachment:fixed;
+   			background-color:#CCCCCC;
+		}
 		#todo-list 				{ margin-bottom:30px; }
 		#todo-form 	 			{ margin-bottom:50px; }
 		.introducearea
@@ -101,7 +107,7 @@
 																				
 
 
-										<input class="form-control input-lg text-center" type="text" placeholder="accountBalance" ng-model="money">
+										<input class="form-control input-lg text-center" type="text" placeholder="转入金额" ng-model="money">
 												<div class="tab-1-container-1"  style="display: flex; flex-direction: column;justify-content: center;"> 
 
 
@@ -157,11 +163,10 @@
 										<h1>已投入</h1><h1 >{{currentProduct.balance}}</h1><h1 >预计获取收益</h1><h1 >{{currentProduct.interest}}</h1>
 		
 									 </div>
-										 <input class="form-control input-lg text-center" type="text" placeholder="accountBalance">
+										 <input class="form-control input-lg text-center" type="text" placeholder="转入金额">
 											</div>
 											 <div class="tab-1-container-1">
 											<button class="btn btn-primary btn-lg" onclick="window.location.reload('index_2.html');" type="submit" ng-click="createTodo()">转入</button>
-											<button class="btn btn-primary btn-lg" onclick="window.location.reload('index_2.html');" type="submit" ng-click="createTodo()">转出</button>
 								</div>
 									</div>
 					</div>
@@ -191,11 +196,14 @@
 											<h1>已投入</h1><h1 >{{currentProduct.balance}}</h1><h1 >预计获取收益</h1><h1 >{{currentProduct.interest}}</h1>
 		
 									 </div>
+<<<<<<< HEAD
 											<input class="form-control input-lg text-center" type="text" placeholder="accountBalance" ng-model="Productmoney">
+=======
+											<input class="form-control input-lg text-center" type="text" placeholder="转入金额">
+>>>>>>> 5b23c38f0a17c95f091ac8036f675fde3e4c7cbc
 											 </div>
 											<div class="tab-1-container-1">
 											<button class="btn btn-primary btn-lg" onclick="window.location.reload('index_2.html');" type="submit" ng-click="createTodo()">转入</button>
-											<button class="btn btn-primary btn-lg" onclick="window.location.reload('index_2.html');" type="submit" ng-click="createTodo()">转出</button>
 								</div>
 									</div>
 					</div>
