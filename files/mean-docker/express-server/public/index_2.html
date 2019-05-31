@@ -88,7 +88,8 @@
 					<li class="active">
 						<a href="#home" data-toggle="tab">
 							 资金服务
-							</a>
+						</a>
+					</li>
 			
 					<li class="dropdown">
 						<a href="#" id="myTabDrop1" class="dropdown-toggle" 
@@ -112,6 +113,9 @@
 										<button class="btn btn-primary btn-lg" type="submit" ng-click="deposit(money)">点击存款</button>
 																
 										<button class="btn btn-primary btn-lg" type="submit" ng-click="withdrawal(money)">点击取款</button>
+									
+										<h1 style="display: none; font-size:16px;color:red" id="accountLestThanZero">取款多于余额</h1>
+			
 									</div>
 									<p></p>
 									<!--转账-->

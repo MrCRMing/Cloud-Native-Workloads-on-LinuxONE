@@ -186,6 +186,13 @@ angular.module('todo2Controller', [])
 			}
 		   }else{
 			   //给出余额不足的警告
+			   var traget=document.getElementById("accountLestThanZero");
+			   if(traget.style.display=="none"){
+					   traget.style.display="inline";
+			   }else{
+					   traget.style.display="none";
+	   
+			 }
 		   }
             
 		};
