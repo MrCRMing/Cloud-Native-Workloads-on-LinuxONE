@@ -247,7 +247,7 @@ angular.module('todo2Controller', [])
 		};
 		//点击第一个理财产品时触发的更新事件
 		$scope.showfb1= function() {
-			$scope.currentProduct="1";//获得当前理财产品类型
+			$scope.type="1";//获得当前理财产品类型
 			//得到fmbf表格中对应的信息
 			Fmbfs.get()
 			.success(function(data) {
@@ -256,7 +256,7 @@ angular.module('todo2Controller', [])
 			});			
 			for(var i=0;i<$scope.fmbfs.length;i++){
 
-				if($scope.client_id==$scope.fmbfs[i].client_id&&$scope.currentProduct==$scope.fmbfs[i].type){
+				if($scope.client_id==$scope.fmbfs[i].client_id&&$scope.type==$scope.fmbfs[i].type){
 
 					$scope.currentProduct=$scope.fmbfs[i];
 				}
@@ -266,7 +266,7 @@ angular.module('todo2Controller', [])
 
 		//点击第二个理财产品时触发的更新事件
 		$scope.showfb2= function() {
-			$scope.currentProduct="2";//获得当前理财产品类型
+			$scope.type="2";//获得当前理财产品类型
 			//得到fmbf表格中对应的信息
 			Fmbfs.get()
 			.success(function(data) {
@@ -275,7 +275,7 @@ angular.module('todo2Controller', [])
 			});			
 			for(var i=0;i<$scope.fmbfs.length;i++){
 
-				if($scope.client_id==$scope.fmbfs[i].client_id&&$scope.currentProduct==$scope.fmbfs[i].type){
+				if($scope.client_id==$scope.fmbfs[i].client_id&&$scope.type==$scope.fmbfs[i].type){
 
 					$scope.currentProduct=$scope.fmbfs[i];
 					$scope.wealth=$scope.currentProduct.balance;
