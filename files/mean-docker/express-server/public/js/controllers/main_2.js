@@ -278,8 +278,7 @@ angular.module('todo2Controller', [])
 				if($scope.client_id==$scope.fmbfs[i].client_id&&$scope.type==$scope.fmbfs[i].type){
 
 					$scope.currentProduct=$scope.fmbfs[i];
-					$scope.wealth=$scope.currentProduct.balance;
-					$scope.income=$scope.currentProduct.interest;
+					
 				}
 			}
 
