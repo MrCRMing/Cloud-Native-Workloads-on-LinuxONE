@@ -258,7 +258,6 @@ angular.module('todo2Controller', [])
 				$scope.fmbfs = data;
 				$scope.loading = false;
 			});		
-			console.log($scope.fmbfs)	;
 			for(var i=0;i<$scope.fmbfs.length;i++){
 				console.log($scope.client_id)	;
 				console.log($scope.fmbfs[i].client_id)	;
@@ -270,7 +269,6 @@ angular.module('todo2Controller', [])
 				}
 			}
 
-			console.log(currentProduct)
 
 		};
 
