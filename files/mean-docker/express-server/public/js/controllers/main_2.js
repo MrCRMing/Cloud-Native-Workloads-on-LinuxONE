@@ -249,6 +249,7 @@ angular.module('todo2Controller', [])
 		};
 		//点击第一个理财产品时触发的更新事件
 		$scope.showfb1= function() {
+
 			$scope.type="1";//获得当前理财产品类型
 			//得到fmbf表格中对应的信息
 			Fmbfs.get()
@@ -263,6 +264,8 @@ angular.module('todo2Controller', [])
 					$scope.currentProduct=$scope.fmbfs[i];
 				}
 			}
+
+			console.log(currentProduct)
 
 		};
 
