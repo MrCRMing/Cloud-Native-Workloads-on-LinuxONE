@@ -97,8 +97,8 @@
 							<b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
-							<li><a href="#Wealth_manage1" tabindex="-1" data-toggle="tab">理财产品1</a></li>
-							<li><a href="#Wealth_manage2" tabindex="-1" data-toggle="tab">理财产品2</a></li>
+							<li><a href="#Wealth_manage1" tabindex="-1" data-toggle="tab" ng-click="showfb1()">理财产品1</a></li>
+							<li><a href="#Wealth_manage2" tabindex="-1" data-toggle="tab" ng-click="showfb2()">理财产品2</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -160,7 +160,7 @@
 							</div>
 												<div class="tab-1-container">
 															 <div class="userMoney-contianer">
-																<h1>已投入</h1><h1 id="test">{{account.wealth}}￥</h1><h1 id="test">获取收益{{account.getwealth}}￥</h1>>
+																<h1>已投入</h1><h1 id="test">{{currentProduct.balance}}￥</h1><h1 id="test">预计获取收益{{currentProduct. interest}}￥</h1>>
 		
 									 </div>
 															 <input class="form-control input-lg text-center" type="text" placeholder="accountBalance">
@@ -194,7 +194,7 @@
 						<div>
 												<div class="tab-1-container">
 															 <div class="userMoney-contianer">
-																<h1>已投入</h1><h1 id="test">{{account.wealth}}￥</h1><h1 id="test">获取收益{{account.getwealth}}￥</h1>>
+																<h1>已投入</h1><h1 id="test">{{currentProduct.balance}}￥</h1><h1 id="test">预计获取收益{{currentProduct. interest}}￥</h1>>
 		
 									 </div>
 															 <input class="form-control input-lg text-center" type="text" placeholder="accountBalance">
