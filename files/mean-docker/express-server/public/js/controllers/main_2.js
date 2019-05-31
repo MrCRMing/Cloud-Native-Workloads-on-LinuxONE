@@ -296,7 +296,7 @@ angular.module('todo2Controller', [])
 		};
 
 		$scope.investment= function(productmoney) {
-			withdrawal(productmoney);//减少账户余额
+			$scope.withdrawal(productmoney);//减少账户余额
 			//更改理财表
 			$scope.currentProduct.balance=productmoney;
 			$scope.currentProduct.interest=$scope.currentProduct.balance*$scope.currentProduct.interest_rate*$scope.currentProduct.store_time;
