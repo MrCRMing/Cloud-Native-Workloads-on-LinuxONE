@@ -28,6 +28,12 @@ angular.module('todoController', [])
 				$scope.clients = data;
 				$scope.loading = false;
 			});	
+			
+		Fmbfs.get()
+			.success(function(data) {
+				$scope.fmbfs = data;
+				$scope.loading = false;
+			});	
 
 			//在开始加载页面的时候先插入两条客户数据以及对应的四条理财产品数据
 			//插入两条client数据
