@@ -75,15 +75,9 @@ module.exports = function (app) {
         });
     });
 
-    // application -------------------------------------------------------------
-    app.get('*', function (req, res) {
-        res.sendFile(__dirname + '/public/index.html'+'/public/index_2.html'); // load the single view file (angular will handle the page changes on the front-end)
 
-    });
-};
-module.exports = function (app) {
 
-    // api ---------------------------------------------------------------------
+     // api ---------------------------------------------------------------------
     // get all todos
     app.get('/api/clients', function (req, res) {
         // use mongoose to get all todos in the database
@@ -126,17 +120,7 @@ module.exports = function (app) {
             getClients(res);
         });
     });
-
-    // application -------------------------------------------------------------
-    app.get('*', function (req, res) {
-        res.sendFile(__dirname + '/public/index.html'+'/public/index_2.html'); // load the single view file (angular will handle the page changes on the front-end)
-
-    });
-};
-
-module.exports = function (app) {
-
-    // api ---------------------------------------------------------------------
+     // api ---------------------------------------------------------------------
     // get all todos
     app.get('/api/fmbfs', function (req, res) {
         // use mongoose to get all todos in the database

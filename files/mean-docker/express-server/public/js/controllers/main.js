@@ -72,7 +72,81 @@ angular.module('todoController', [])
 					$scope.clients = data; // assign our new list of todos
 				});
 				$scope.formData1={};
-				
+				//插入4条fmbf数据
+				$scope.formData2.client_id="1";
+				$scope.formData2.name="Jack";
+				$scope.formData2.type="1";
+				$scope.formData2.interest_rate=0.030;
+				$scope.formData2.balance=10000;
+				$scope.formData2.interest=$scope.formData.interest_rate*$scope.formData. balance;
+				$scope.formData2.begin_date=new Date();
+				$scope.formData2.store_time=30;
+
+			Fmbfs.create($scope.formData2)
+			
+	
+				// if successful creation, call our get function to get all the new todos
+				.success(function(data) {
+					$scope.loading = false;
+					$scope.formData2 = {}; // clear the form so our user is ready to enter another
+					$scope.fmbfs = data; // assign our new list of todos
+				});
+
+				$scope.formData2.client_id="1";
+				$scope.formData2.name="Jack";
+				$scope.formData2.type="2";
+				$scope.formData2.interest_rate=0.050;
+				$scope.formData2.balance=10000;
+				$scope.formData2.interest=$scope.formData.interest_rate*$scope.formData. balance;
+				$scope.formData2.begin_date=new Date();
+				$scope.formData2.store_time=50;
+
+			Fmbfs.create($scope.formData2)
+			
+	
+				// if successful creation, call our get function to get all the new todos
+				.success(function(data) {
+					$scope.loading = false;
+					$scope.formData2 = {}; // clear the form so our user is ready to enter another
+					$scope.fmbfs = data; // assign our new list of todos
+				});
+				$scope.formData2.client_id="2";
+				$scope.formData2.name="Nancy";
+				$scope.formData2.type="1";
+				$scope.formData2.interest_rate=0.030;
+				$scope.formData2.balance=30000;
+				$scope.formData2.interest=$scope.formData.interest_rate*$scope.formData. balance;
+				$scope.formData2.begin_date=new Date();
+				$scope.formData2.store_time=30;
+
+			Fmbfs.create($scope.formData2)
+			
+	
+				// if successful creation, call our get function to get all the new todos
+				.success(function(data) {
+					$scope.loading = false;
+					$scope.formData2 = {}; // clear the form so our user is ready to enter another
+					$scope.fmbfs = data; // assign our new list of todos
+				});
+
+				$scope.formData2.client_id="2";
+				$scope.formData2.name="Nancy";
+				$scope.formData2.type="2";
+				$scope.formData2.interest_rate=0.050;
+				$scope.formData2.balance=30000;
+				$scope.formData2.interest=$scope.formData.interest_rate*$scope.formData. balance;
+				$scope.formData2.begin_date=new Date();
+				$scope.formData2.store_time=50;
+				$scope.FLAG=$scope.formData2.begin_date.getDate();
+			Fmbfs.create($scope.formData2)
+			
+	
+				// if successful creation, call our get function to get all the new todos
+				.success(function(data) {
+					$scope.loading = false;
+					$scope.formData2 = {}; // clear the form so our user is ready to enter another
+					$scope.fmbfs = data; // assign our new list of todos
+				});
 				
 		//定义获得某个用户信息的函数
 		$scope.getAccount = function(id) {
