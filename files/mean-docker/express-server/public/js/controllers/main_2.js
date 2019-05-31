@@ -137,9 +137,13 @@ angular.module('todo2Controller', [])
 
                         $scope.account=$scope.clients[i];
                     }
-                }
+				}
+				console.log("取款")
+
 			//更改balance
            if($scope.account.balance>=Number(money)){
+			console.log("比较钱，取款")
+
 			$scope.new_balance=$scope.account.balance-Number(money);
 			$scope.account.balance=$scope.new_balance;
 
@@ -186,6 +190,14 @@ angular.module('todo2Controller', [])
 			}
 		   }else{
 			   //给出余额不足的警告
+			   var traget=document.getElementById("accountLestThanZero");
+			   console.log("余额不足")
+			   if(traget.style.display=="none"){
+					   traget.style.display="inline";
+			   }else{
+					   traget.style.display="none";
+	   
+			 }
 		   }
             
 		};
