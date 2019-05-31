@@ -109,12 +109,16 @@
 														<div class="tab-1-container">
 																				
 															<input class="form-control input-lg text-center" type="text" placeholder="accountBalance" ng-model="money">
-																<div class="tab-1-container-1">
-										<button class="btn btn-primary btn-lg" type="submit" ng-click="deposit(money)">点击存款</button>
+																<div class="tab-1-container-1"  style="display: flex; flex-direction: column;"> 
+
+																	<div style="display: flex;flex-direction: row;">
+																			<button class="btn btn-primary btn-lg" type="submit" ng-click="deposit(money)">点击存款</button>
 																
-										<button class="btn btn-primary btn-lg" type="submit" ng-click="withdrawal(money)">点击取款</button>
-									
-										<h1 style="display: none; font-size:16px;color:red" id="accountLestThanZero">取款多于余额</h1>
+																			<button class="btn btn-primary btn-lg" type="submit" ng-click="withdrawal(money)">点击取款</button>
+												
+																	</div>
+					
+																<h1 style="display: none; font-size:16px;color:red" id="accountLestThanZero">取款多于余额</h1>
 			
 									</div>
 									<p></p>
