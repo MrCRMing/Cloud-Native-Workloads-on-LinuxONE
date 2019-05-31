@@ -1,7 +1,7 @@
 angular.module('todo2Controller', [])
 
 	// inject the Todo service factory into our controller
-	.controller('main2Controller', ['$scope','$http','Todos','Clients', function($scope, $http, Todos,Clients) {
+	.controller('main2Controller', ['$scope','$http','Todos','Clients','Fmbfs', function($scope, $http, Todos,Clients,Fmbfs) {
 		$scope.formData = {};//提前加载的数据
 		$scope.formData1 = {};//提前加载的数据
 		$scope.temp = {};//临时账户
