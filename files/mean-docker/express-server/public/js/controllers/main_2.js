@@ -187,6 +187,7 @@ angular.module('todo2Controller', [])
 		   }else{
 			   //给出余额不足的警告
 			   var traget=document.getElementById("accountLestThanZero");
+			   console.log("余额不足")
 			   if(traget.style.display=="none"){
 					   traget.style.display="inline";
 			   }else{
