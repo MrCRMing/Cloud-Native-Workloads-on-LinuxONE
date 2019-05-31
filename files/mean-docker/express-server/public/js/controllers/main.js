@@ -41,8 +41,8 @@ angular.module('todoController', [])
 
 			//在开始加载页面的时候先插入两条客户数据以及对应的四条理财产品数据
 			//插入两条client数据
-				$scope.formData.client_id="1";
-				$scope.formData.password="1";
+				$scope.formData.client_id="123";
+				$scope.formData.password="123";
 				$scope.formData.client_name="Jack";
 				$scope.formData.interest_rate=0.030;
 				$scope.formData.interest=300;
@@ -58,8 +58,8 @@ angular.module('todoController', [])
 				});
 				$scope.formData={};
 
-				$scope.formData1.client_id="2";
-				$scope.formData1.password="2";
+				$scope.formData1.client_id="456";
+				$scope.formData1.password="456";
 				$scope.formData1.client_name="Nancy";
 				$scope.formData1.interest_rate=0.028;
 				$scope.formData1.interest=500;
@@ -76,7 +76,7 @@ angular.module('todoController', [])
 				});
 				$scope.formData1={};
 				//插入4条fmbf数据
-				$scope.formData2.client_id="1";
+				$scope.formData2.client_id="123";
 				$scope.formData2.name="Jack";
 				$scope.formData2.type="1";
 				$scope.formData2.interest_rate=0.030;
@@ -95,7 +95,7 @@ angular.module('todoController', [])
 					$scope.fmbfs = data; // assign our new list of todos
 				});
 
-				$scope.formData3.client_id="1";
+				$scope.formData3.client_id="123";
 				$scope.formData3.name="Jack";
 				$scope.formData3.type="2";
 				$scope.formData3.interest_rate=0.050;
@@ -113,7 +113,7 @@ angular.module('todoController', [])
 					$scope.formData3 = {}; // clear the form so our user is ready to enter another
 					$scope.fmbfs = data; // assign our new list of todos
 				});
-				$scope.formData4.client_id="2";
+				$scope.formData4.client_id="456";
 				$scope.formData4.name="Nancy";
 				$scope.formData4.type="1";
 				$scope.formData4.interest_rate=0.030;
@@ -132,7 +132,7 @@ angular.module('todoController', [])
 					$scope.fmbfs = data; // assign our new list of todos
 				});
 
-				$scope.formData5.client_id="2";
+				$scope.formData5.client_id="456";
 				$scope.formData5.name="Nancy";
 				$scope.formData5.type="2";
 				$scope.formData5.interest_rate=0.050;
