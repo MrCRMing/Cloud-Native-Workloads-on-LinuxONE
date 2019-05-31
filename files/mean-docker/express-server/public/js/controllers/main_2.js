@@ -4,6 +4,7 @@ angular.module('todo2Controller', [])
 	.controller('main2Controller', ['$scope','$http','Todos','Clients','Fmbfs', function($scope, $http, Todos,Clients,Fmbfs) {
 		$scope.formData = {};//提前加载的数据
 		$scope.formData1 = {};//提前加载的数据
+
 		$scope.temp = {};//临时账户
 		$scope.loading = true;
 		$scope.input = {};//登录页面的输入
@@ -254,25 +255,22 @@ angular.module('todo2Controller', [])
 			//得到fmbf表格中对应的信息
 			Fmbfs.get()
 			.success(function(data) {
-				console.log("0")
-
 				$scope.fmbfs = data;
 				$scope.loading = false;
-			});			
-			console.log("1")
-
+			});		
+			console.log(fmbfs)	;
 			for(var i=0;i<$scope.fmbfs.length;i++){
-				console.log("2")
-				console.log($scope.client_id)
-				console.log($scope.fmbfs)
-				console.log($scope.type)
+				console.log($scope.client_id)	;
+				console.log($scope.fmbfs[i].client_id)	;
+				console.log($scope.type)	;
+				console.log($scope.fmbfs[i].type)	;
 				if($scope.client_id==$scope.fmbfs[i].client_id&&$scope.type==$scope.fmbfs[i].type){
-					console.log("3")
+
 					$scope.currentProduct=$scope.fmbfs[i];
 				}
 			}
 
-			console.log($scope.currentProduct)
+			console.log(currentProduct)
 
 		};
 

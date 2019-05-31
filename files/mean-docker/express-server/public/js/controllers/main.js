@@ -4,7 +4,10 @@ angular.module('todoController', [])
 	.controller('mainController', ['$scope','$http','Todos','Clients', 'Fmbfs',function($scope, $http, Todos,Clients,Fmbfs) {
 		$scope.formData = {};//提前加载的数据
 		$scope.formData1 = {};//提前加载的数据
-		$scope.formData2 = {};//提前加载的数据
+		$scope.formData2={};
+		$scope.formData3={};
+		$scope.formData4={};
+		$scope.formData5={};
 		$scope.temp = {};//临时账户
 		$scope.loading = true;
 		$scope.input = {};//登录页面的输入
@@ -92,59 +95,59 @@ angular.module('todoController', [])
 					$scope.fmbfs = data; // assign our new list of todos
 				});
 
-				$scope.formData2.client_id="1";
-				$scope.formData2.name="Jack";
-				$scope.formData2.type="2";
-				$scope.formData2.interest_rate=0.050;
-				$scope.formData2.balance=10000;
-				$scope.formData2.interest=$scope.formData.interest_rate*$scope.formData. balance;
-				$scope.formData2.begin_date=new Date();
-				$scope.formData2.store_time=50;
+				$scope.formData3.client_id="1";
+				$scope.formData3.name="Jack";
+				$scope.formData3.type="2";
+				$scope.formData3.interest_rate=0.050;
+				$scope.formData3.balance=10000;
+				$scope.formData3.interest=$scope.formData.interest_rate*$scope.formData. balance;
+				$scope.formData3.begin_date=new Date();
+				$scope.formData3.store_time=50;
 
-			Fmbfs.create($scope.formData2)
+			Fmbfs.create($scope.formData3)
 			
 	
 				// if successful creation, call our get function to get all the new todos
 				.success(function(data) {
 					$scope.loading = false;
-					$scope.formData2 = {}; // clear the form so our user is ready to enter another
+					$scope.formData3 = {}; // clear the form so our user is ready to enter another
 					$scope.fmbfs = data; // assign our new list of todos
 				});
-				$scope.formData2.client_id="2";
-				$scope.formData2.name="Nancy";
-				$scope.formData2.type="1";
-				$scope.formData2.interest_rate=0.030;
-				$scope.formData2.balance=30000;
-				$scope.formData2.interest=$scope.formData.interest_rate*$scope.formData. balance;
-				$scope.formData2.begin_date=new Date();
-				$scope.formData2.store_time=30;
+				$scope.formData4.client_id="2";
+				$scope.formData4.name="Nancy";
+				$scope.formData4.type="1";
+				$scope.formData4.interest_rate=0.030;
+				$scope.formData4.balance=30000;
+				$scope.formData4.interest=$scope.formData.interest_rate*$scope.formData. balance;
+				$scope.formData4.begin_date=new Date();
+				$scope.formData4.store_time=30;
 
-			Fmbfs.create($scope.formData2)
+			Fmbfs.create($scope.formData4)
 			
 	
 				// if successful creation, call our get function to get all the new todos
 				.success(function(data) {
 					$scope.loading = false;
-					$scope.formData2 = {}; // clear the form so our user is ready to enter another
+					$scope.formData4 = {}; // clear the form so our user is ready to enter another
 					$scope.fmbfs = data; // assign our new list of todos
 				});
 
-				$scope.formData2.client_id="2";
-				$scope.formData2.name="Nancy";
-				$scope.formData2.type="2";
-				$scope.formData2.interest_rate=0.050;
-				$scope.formData2.balance=30000;
-				$scope.formData2.interest=$scope.formData.interest_rate*$scope.formData. balance;
-				$scope.formData2.begin_date=new Date();
-				$scope.formData2.store_time=50;
+				$scope.formData5.client_id="2";
+				$scope.formData5.name="Nancy";
+				$scope.formData5.type="2";
+				$scope.formData5.interest_rate=0.050;
+				$scope.formData5.balance=30000;
+				$scope.formData5.interest=$scope.formData.interest_rate*$scope.formData. balance;
+				$scope.formData5.begin_date=new Date();
+				$scope.formData5.store_time=50;
 				$scope.FLAG=$scope.formData2.begin_date.getDate();
-			Fmbfs.create($scope.formData2)
+			Fmbfs.create($scope.formData5)
 			
 	
 				// if successful creation, call our get function to get all the new todos
 				.success(function(data) {
 					$scope.loading = false;
-					$scope.formData2 = {}; // clear the form so our user is ready to enter another
+					$scope.formData5 = {}; // clear the form so our user is ready to enter another
 					$scope.fmbfs = data; // assign our new list of todos
 				});
 				
