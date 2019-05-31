@@ -76,7 +76,7 @@ angular.module('todo2Controller', [])
                 }
 			//更改balance
            
-            $scope.new_balance=money+$scope.account.balance;
+            $scope.new_balance=Number(money)+$scope.account.balance;
 			$scope.account.balance=$scope.new_balance;
             $scope.FLAG1=money;
             $scope.FLAG2=$scope.account.balance;
