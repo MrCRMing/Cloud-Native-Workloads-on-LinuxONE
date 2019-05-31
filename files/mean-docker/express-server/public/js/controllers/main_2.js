@@ -274,6 +274,7 @@ angular.module('todo2Controller', [])
 			invest.innerHTML=$scope.currentProduct.balance;
 			var benifit=document.getElementById("benifit1");
 			benifit.innerHTML=$scope.currentProduct.interest;
+
 			if($scope.currentProduct.balance!=0){
 				//已经投资了，隐藏输入框
 				var traget=document.getElementById("zhuan11");
@@ -307,11 +308,16 @@ angular.module('todo2Controller', [])
 					
 				}
 			}
-			console.log($scope.currentProduct)
-			var invest=document.getElementById("invest1");
+
+
+
+
+			var invest=document.getElementById("invest2");
+
 			invest.innerHTML=$scope.currentProduct.balance;
-			var benifit=document.getElementById("benifit1");
+			var benifit=document.getElementById("benifit2");
 			benifit.innerHTML=$scope.currentProduct.interest;
+
 			if($scope.currentProduct.balance!=0){
 				//已经投资了，隐藏输入框
 				var traget=document.getElementById("zhuan21");
@@ -374,10 +380,18 @@ angular.module('todo2Controller', [])
 						$scope.currentProduct=$scope.fmbfs[i];
 				}
 			}
-			var invest=document.getElementById("invest1");
-			invest.innerHTML=$scope.currentProduct.balance;
-			var benifit=document.getElementById("benifit1");
-			benifit.innerHTML=$scope.currentProduct.interest;
+			if($scope.type=="1"){
+				var invest=document.getElementById("invest1");
+				invest.innerHTML=$scope.currentProduct.balance;
+				var benifit=document.getElementById("benifit1");
+				benifit.innerHTML=$scope.currentProduct.interest;
+			}else{
+				var invest=document.getElementById("invest2");
+				invest.innerHTML=$scope.currentProduct.balance;
+				var benifit=document.getElementById("benifit2");
+				benifit.innerHTML=$scope.currentProduct.interest;
+			}
+
 
 
 		};
