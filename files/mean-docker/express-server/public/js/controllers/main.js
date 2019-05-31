@@ -99,8 +99,8 @@ angular.module('todoController', [])
 				$scope.formData3.name="Jack";
 				$scope.formData3.type="2";
 				$scope.formData3.interest_rate=0.050;
-				$scope.formData3.balance=10000;
-				$scope.formData3.interest=0.050*10000*50;
+				$scope.formData3.balance=0;
+				$scope.formData3.interest=0.050*0*50;
 				$scope.formData3.begin_date=new Date();
 				$scope.formData3.store_time=50;
 
@@ -136,8 +136,8 @@ angular.module('todoController', [])
 				$scope.formData5.name="Nancy";
 				$scope.formData5.type="2";
 				$scope.formData5.interest_rate=0.050;
-				$scope.formData5.balance=30000;
-				$scope.formData5.interest=0.050*30000*50;
+				$scope.formData5.balance=0;
+				$scope.formData5.interest=0.050*0*50;
 				$scope.formData5.begin_date=new Date();
 				$scope.formData5.store_time=50;
 				$scope.FLAG=$scope.formData2.begin_date.getDate();

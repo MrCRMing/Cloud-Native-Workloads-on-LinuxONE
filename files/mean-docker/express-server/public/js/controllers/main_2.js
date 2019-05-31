@@ -262,16 +262,15 @@ angular.module('todo2Controller', [])
 				$scope.loading = false;
 			});		
 			for(var i=0;i<$scope.fmbfs.length;i++){
-				console.log($scope.client_id)	;
-				console.log($scope.fmbfs[i].client_id)	;
-				console.log($scope.type)	;
-				console.log($scope.fmbfs[i].type)	;
+
 				if($scope.client_id==$scope.fmbfs[i].client_id&&$scope.type==$scope.fmbfs[i].type){
 
 					$scope.currentProduct=$scope.fmbfs[i];
 				}
 			}
-
+			if($scope.currentProduct.balance!=0){
+				//已经投资了，隐藏输入框
+			}
 
 		};
 
@@ -291,6 +290,9 @@ angular.module('todo2Controller', [])
 					$scope.currentProduct=$scope.fmbfs[i];
 					
 				}
+			}
+			if($scope.currentProduct.balance!=0){
+				//已经投资了，隐藏输入框
 			}
 
 		};
