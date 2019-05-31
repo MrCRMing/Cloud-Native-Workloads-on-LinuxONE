@@ -270,6 +270,16 @@ angular.module('todo2Controller', [])
 			}
 			if($scope.currentProduct.balance!=0){
 				//已经投资了，隐藏输入框
+				var traget=document.getElementById("zhuan11");
+				var traget1=document.getElementById("zhuan12");
+
+				if(traget.style.display=="none"){
+						traget.style.display="inline";
+						traget1.style.display="none";
+				}else{
+						traget.style.display="none";
+						traget1.style.display="none";
+			  	}
 			}
 
 		};
@@ -293,6 +303,16 @@ angular.module('todo2Controller', [])
 			}
 			if($scope.currentProduct.balance!=0){
 				//已经投资了，隐藏输入框
+				var traget=document.getElementById("zhuan21");
+				var traget1=document.getElementById("zhuan22");
+
+				if(traget.style.display=="none"){
+						traget.style.display="inline";
+						traget1.style.display="none";
+				}else{
+						traget.style.display="none";
+						traget1.style.display="none";
+			  	}
 			}
 
 		};
