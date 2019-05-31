@@ -281,7 +281,7 @@ angular.module('todo2Controller', [])
 				var traget1=document.getElementById("zhuan12");
 				console.log("yc1")
 				if(traget.style.display=="none"){
-						traget.style.display="inline";
+						traget.style.display="none";
 						traget1.style.display="none";
 				}else{
 						traget.style.display="none";
@@ -322,7 +322,7 @@ angular.module('todo2Controller', [])
 				console.log("yc2")
 
 				if(traget.style.display=="none"){
-						traget.style.display="inline";
+						traget.style.display="none";
 						traget1.style.display="none";
 				}else{
 						traget.style.display="none";
