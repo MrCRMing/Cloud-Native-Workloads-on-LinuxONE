@@ -122,7 +122,73 @@ angular.module('todo2Controller', [])
 			}
 		};
 
+		//取款
+		$scope.Withdrawal = function(money) {
+            //获得当前客户
+            Clients.get()
+            .success(function(data) {
+                    $scope.clients = data;
+                    $scope.loading = false;
+                });	
 
+                for(var i=0;i<$scope.clients.length;i++){
+
+                    if($scope.client_id==$scope.clients[i].client_id){
+
+                        $scope.account=$scope.clients[i];
+                    }
+                }
+			//更改balance
+           if($scope.account.balance>=Number(money)){
+			$scope.new_balance=$scope.account.balance-Number(money);
+			$scope.account.balance=$scope.new_balance;
+
+            //删除原来的账号
+            $scope.loading = true;
+            Clients.delete($scope.account._id)
+            .success(function(data) {
+                $scope.loading = false;
+                $scope.clients = data; // assign our new list of todos
+               
+            });
+			
+			//构建新账号
+			$scope.temp.client_id=$scope.account.client_id;
+			$scope.temp.password=$scope.account.password;
+			$scope.temp.client_name=$scope.account.client_name;
+			$scope.temp.interest_rate=$scope.account.interest_rate;
+			$scope.temp.interest=$scope.account.interest;
+			$scope.temp.last_modify_time=$scope.account.last_modify_time;
+			$scope.temp.balance=$scope.account.balance;
+
+			//添加新账号
+			Clients.create($scope.temp)
+			.success(function(data) {
+				$scope.loading = false;
+				$scope.temp = {}; 
+				$scope.clients = data; 
+            });
+            //得到当前数组
+            Clients.get()
+			.success(function(data) {
+				$scope.clients = data;
+				$scope.loading = false;
+			});	
+			
+			//重新确定当前账号
+			for(var i=0;i<$scope.clients.length;i++){
+				
+				if($scope.client_id==$scope.clients[i].client_id){
+                    $scope.account=$scope.clients[i];
+                   
+					$scope.getAccount($scope.client_id);
+				}
+			}
+		   }else{
+			   //给出余额不足的警告
+		   }
+            
+		};
 		// CREATE ==================================================================
 		// when submitting the add form, send the text to the node API
 		$scope.createTodo = function() {
