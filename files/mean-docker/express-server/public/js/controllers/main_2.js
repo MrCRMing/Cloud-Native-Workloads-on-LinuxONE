@@ -333,6 +333,8 @@ angular.module('todo2Controller', [])
 		};
 
 		$scope.investment= function(productmoney) {
+			console.log("zr");
+
 			$scope.withdrawal(productmoney);//减少账户余额
 			//更改理财表
 			$scope.currentProduct.balance=productmoney;
