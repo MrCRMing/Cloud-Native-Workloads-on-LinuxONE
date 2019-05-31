@@ -11,9 +11,12 @@ angular.module('todo2Controller', [])
 		$scope.FLAG1=0;
 		$scope.FLAG2=0;
 		$scope.clients={};//读取client表格的所有内容
+		$scope.fmbfs={};//读取fmbf表格的所有内容
 		$scope.client_id=localStorage.getItem("account_id");
 		$scope.account={};//设置当前用户
+
 		$scope.money;//用于存款和取款
+		$scope.currentProduct={};//记录当前选择的理财产品
 		// GET =====================================================================
 		// when landing on the page, get all todos and show them
 		// use the service to get all the todos
@@ -28,7 +31,11 @@ angular.module('todo2Controller', [])
 				$scope.loading = false;
 			});	
 
-				
+		Fmbfs.get()
+			.success(function(data) {
+				$scope.fmbfs = data;
+				$scope.loading = false;
+			});			
 
 
 
@@ -237,8 +244,43 @@ angular.module('todo2Controller', [])
 					$scope.todos = data; // assign our new list of todos
 				});
 		};
-		
+		//点击第一个理财产品时触发的更新事件
+		$scope.showfb1= function() {
+			$scope.currentProduct="1";//获得当前理财产品类型
+			//得到fmbf表格中对应的信息
+			Fmbfs.get()
+			.success(function(data) {
+				$scope.fmbfs = data;
+				$scope.loading = false;
+			});			
+			for(var i=0;i<$scope.fmbfs.length;i++){
 
+				if($scope.client_id==$scope.fmbfs[i].client_id&&$scope.currentProduct==$scope.fmbfs[i].type){
+
+					$scope.currentProduct=$scope.fmbfs[i];
+				}
+			}
+
+		};
+
+		//点击第二个理财产品时触发的更新事件
+		$scope.showfb2= function() {
+			$scope.currentProduct="2";//获得当前理财产品类型
+			//得到fmbf表格中对应的信息
+			Fmbfs.get()
+			.success(function(data) {
+				$scope.fmbfs = data;
+				$scope.loading = false;
+			});			
+			for(var i=0;i<$scope.fmbfs.length;i++){
+
+				if($scope.client_id==$scope.fmbfs[i].client_id&&$scope.currentProduct==$scope.fmbfs[i].type){
+
+					$scope.currentProduct=$scope.fmbfs[i];
+				}
+			}
+
+		};
 	}]);
 
 
