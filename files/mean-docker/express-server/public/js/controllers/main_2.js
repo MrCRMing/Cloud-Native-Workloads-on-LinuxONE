@@ -14,9 +14,10 @@ angular.module('todo2Controller', [])
 		$scope.fmbfs={};//读取fmbf表格的所有内容
 		$scope.client_id=localStorage.getItem("account_id");
 		$scope.account={};//设置当前用户
-
 		$scope.money;//用于存款和取款
 		$scope.currentProduct={};//记录当前选择的理财产品
+		$scope.wealth="0";
+		$scope.income="0";
 		// GET =====================================================================
 		// when landing on the page, get all todos and show them
 		// use the service to get all the todos
@@ -277,6 +278,8 @@ angular.module('todo2Controller', [])
 				if($scope.client_id==$scope.fmbfs[i].client_id&&$scope.currentProduct==$scope.fmbfs[i].type){
 
 					$scope.currentProduct=$scope.fmbfs[i];
+					$scope.wealth=$scope.currentProduct.balance;
+					$scope.income=$scope.currentProduct.interest;
 				}
 			}
 

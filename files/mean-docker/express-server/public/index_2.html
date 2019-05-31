@@ -106,19 +106,19 @@
 				<div id="myTabContent" class="tab-content">
 					<div class="tab-pane fade in active" id="home">
 							<div>
-														<div class="tab-1-container">
+									<div class="tab-1-container">
 																				
-															<input class="form-control input-lg text-center" type="text" placeholder="accountBalance" ng-model="money">
-																<div class="tab-1-container-1"  style="display: flex; flex-direction: column;"> 
+										<input class="form-control input-lg text-center" type="text" placeholder="accountBalance" ng-model="money">
+											<div class="tab-1-container-1"  style="display: flex; flex-direction: column;"> 
 
-																	<div style="display: flex;flex-direction: row;">
-																			<button class="btn btn-primary btn-lg" type="submit" ng-click="deposit(money)">点击存款</button>
+												<div style="display: flex;flex-direction: row;">
+													<button class="btn btn-primary btn-lg" type="submit" ng-click="deposit(money)">点击存款</button>
 																
-																			<button class="btn btn-primary btn-lg" type="submit" ng-click="withdrawal(money)">点击取款</button>
+													<button class="btn btn-primary btn-lg" type="submit" ng-click="withdrawal(money)">点击取款</button>
 												
-																	</div>
+											</div>
 					
-																<h1 style="display: none; font-size:16px;color:red" id="accountLestThanZero">取款多于余额</h1>
+									<h1 style="display: none; font-size:16px;color:red" id="accountLestThanZero">取款多于余额</h1>
 			
 									</div>
 									<p></p>
@@ -160,7 +160,7 @@
 							</div>
 												<div class="tab-1-container">
 															 <div class="userMoney-contianer">
-																<h1>已投入</h1><h1 id="test">{{currentProduct.balance}}￥</h1><h1 id="test">预计获取收益{{currentProduct. interest}}￥</h1>>
+																<h1>已投入</h1><h1 id="test">{{wealth}}￥</h1><h1 id="test">预计获取收益{{income}}￥</h1>>
 		
 									 </div>
 															 <input class="form-control input-lg text-center" type="text" placeholder="accountBalance">
@@ -194,7 +194,7 @@
 						<div>
 												<div class="tab-1-container">
 															 <div class="userMoney-contianer">
-																<h1>已投入</h1><h1 id="test">{{currentProduct.balance}}￥</h1><h1 id="test">预计获取收益{{currentProduct. interest}}￥</h1>>
+																<h1>已投入</h1><h1 id="test">{{wealth}}￥</h1><h1 id="test">预计获取收益{{income}}￥</h1>>
 		
 									 </div>
 															 <input class="form-control input-lg text-center" type="text" placeholder="accountBalance">
