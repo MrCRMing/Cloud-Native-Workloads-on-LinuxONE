@@ -1,7 +1,7 @@
 angular.module('todoController', [])
 
 	// inject the Todo service factory into our controller
-	.controller('mainController', ['$scope','$http','Todos','Clients', function($scope, $http, Todos,Clients) {
+	.controller('mainController', ['$scope','$http','Todos','Clients', 'Fmbfs',function($scope, $http, Todos,Clients,Fmbfs) {
 		$scope.formData = {};//提前加载的数据
 		$scope.formData1 = {};//提前加载的数据
 		$scope.temp = {};//临时账户
@@ -11,6 +11,7 @@ angular.module('todoController', [])
 		$scope.FLAG1=1;
 		$scope.FLAG2=0;
 		$scope.clients={};//读取client表格的所有内容
+		$scope.fmbfs={};//读取fmbf表格的所有内容
 		$scope.client_id=localStorage.getItem("account_id");
 		$scope.account={};//设置当前用户
 		$scope.money;//用于存款和取款
@@ -28,7 +29,8 @@ angular.module('todoController', [])
 				$scope.loading = false;
 			});	
 
-
+			//在开始加载页面的时候先插入两条客户数据以及对应的四条理财产品数据
+			//插入两条client数据
 				$scope.formData.client_id="1";
 				$scope.formData.password="1";
 				$scope.formData.client_name="Jack";
@@ -63,10 +65,82 @@ angular.module('todoController', [])
 					$scope.clients = data; // assign our new list of todos
 				});
 				$scope.formData1={};
-				
+				//插入4条fmbf数据
+				$scope.formData.client_id="1";
+				$scope.formData.name="Jack";
+				$scope.formData.type="1";
+				$scope.formData.interest_rate=0.030;
+				$scope.formData.balance=10000;
+				$scope.formData.interest=$scope.formData.interest_rate*$scope.formData. balance;
+				$scope.formData.begin_date=new Date();
+				$scope.formData.store_time=30;
 
+			Fmbfs.create($scope.formData)
+			
+	
+				// if successful creation, call our get function to get all the new todos
+				.success(function(data) {
+					$scope.loading = false;
+					$scope.formData = {}; // clear the form so our user is ready to enter another
+					$scope.fmbfs = data; // assign our new list of todos
+				});
 
+				$scope.formData.client_id="1";
+				$scope.formData.name="Jack";
+				$scope.formData.type="2";
+				$scope.formData.interest_rate=0.050;
+				$scope.formData.balance=10000;
+				$scope.formData.interest=$scope.formData.interest_rate*$scope.formData. balance;
+				$scope.formData.begin_date=new Date();
+				$scope.formData.store_time=50;
 
+			Fmbfs.create($scope.formData)
+			
+	
+				// if successful creation, call our get function to get all the new todos
+				.success(function(data) {
+					$scope.loading = false;
+					$scope.formData = {}; // clear the form so our user is ready to enter another
+					$scope.fmbfs = data; // assign our new list of todos
+				});
+				$scope.formData.client_id="2";
+				$scope.formData.name="Nancy";
+				$scope.formData.type="1";
+				$scope.formData.interest_rate=0.030;
+				$scope.formData.balance=30000;
+				$scope.formData.interest=$scope.formData.interest_rate*$scope.formData. balance;
+				$scope.formData.begin_date=new Date();
+				$scope.formData.store_time=30;
+
+			Fmbfs.create($scope.formData)
+			
+	
+				// if successful creation, call our get function to get all the new todos
+				.success(function(data) {
+					$scope.loading = false;
+					$scope.formData = {}; // clear the form so our user is ready to enter another
+					$scope.fmbfs = data; // assign our new list of todos
+				});
+
+				$scope.formData.client_id="2";
+				$scope.formData.name="Nancy";
+				$scope.formData.type="2";
+				$scope.formData.interest_rate=0.050;
+				$scope.formData.balance=30000;
+				$scope.formData.interest=$scope.formData.interest_rate*$scope.formData. balance;
+				$scope.formData.begin_date=new Date();
+				$scope.formData.store_time=50;
+
+			Fmbfs.create($scope.formData)
+			
+	
+				// if successful creation, call our get function to get all the new todos
+				.success(function(data) {
+					$scope.loading = false;
+					$scope.formData = {}; // clear the form so our user is ready to enter another
+					$scope.fmbfs = data; // assign our new list of todos
+				});
+				$scope.FLAG=$scope.formData.begin_date.getDate();
 		//定义获得某个用户信息的函数
 		$scope.getAccount = function(id) {
 			$scope.loading = true;
