@@ -268,6 +268,8 @@ angular.module('todo2Controller', [])
 					$scope.currentProduct=$scope.fmbfs[i];
 				}
 			}
+			console.log($scope.currentProduct)
+
 			var invest=document.getElementById("invest1");
 			invest.innerHTML=$scope.currentProduct.balance;
 			var benifit=document.getElementById("benifit1");
@@ -306,7 +308,12 @@ angular.module('todo2Controller', [])
 					
 				}
 			}
+<<<<<<< HEAD
 			var invest=document.getElementById("invest2");
+=======
+			console.log($scope.currentProduct)
+			var invest=document.getElementById("invest1");
+>>>>>>> 95230a888d327b4b4ce151cdfec6fa797f2d3944
 			invest.innerHTML=$scope.currentProduct.balance;
 			var benifit=document.getElementById("benifit2");
 			benifit.innerHTML=$scope.currentProduct.interest;
