@@ -254,13 +254,18 @@ angular.module('todo2Controller', [])
 			//得到fmbf表格中对应的信息
 			Fmbfs.get()
 			.success(function(data) {
+				console.log("0")
+
 				$scope.fmbfs = data;
 				$scope.loading = false;
 			});			
+			console.log("1")
+
 			for(var i=0;i<$scope.fmbfs.length;i++){
+				console.log("2")
 
 				if($scope.client_id==$scope.fmbfs[i].client_id&&$scope.type==$scope.fmbfs[i].type){
-
+					console.log("3")
 					$scope.currentProduct=$scope.fmbfs[i];
 				}
 			}
