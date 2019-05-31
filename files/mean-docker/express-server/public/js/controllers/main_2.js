@@ -268,6 +268,8 @@ angular.module('todo2Controller', [])
 					$scope.currentProduct=$scope.fmbfs[i];
 				}
 			}
+			console.log($scope.currentProduct)
+
 			if($scope.currentProduct.balance!=0){
 				//已经投资了，隐藏输入框
 				var traget=document.getElementById("zhuan11");
@@ -301,6 +303,7 @@ angular.module('todo2Controller', [])
 					
 				}
 			}
+			console.log($scope.currentProduct)
 			if($scope.currentProduct.balance!=0){
 				//已经投资了，隐藏输入框
 				var traget=document.getElementById("zhuan21");
