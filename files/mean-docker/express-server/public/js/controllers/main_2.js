@@ -263,7 +263,9 @@ angular.module('todo2Controller', [])
 
 			for(var i=0;i<$scope.fmbfs.length;i++){
 				console.log("2")
-
+				console.log($scope.client_id)
+				console.log($scope.fmbfs)
+				console.log($scope.type)
 				if($scope.client_id==$scope.fmbfs[i].client_id&&$scope.type==$scope.fmbfs[i].type){
 					console.log("3")
 					$scope.currentProduct=$scope.fmbfs[i];
