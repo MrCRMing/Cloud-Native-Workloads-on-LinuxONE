@@ -123,7 +123,7 @@ angular.module('todo2Controller', [])
 		};
 
 		//取款
-		$scope.Withdrawal = function(money) {
+		$scope.withdrawal = function(money) {
             //获得当前客户
             Clients.get()
             .success(function(data) {
