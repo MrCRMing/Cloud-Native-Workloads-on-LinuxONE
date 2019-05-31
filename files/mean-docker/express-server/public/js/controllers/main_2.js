@@ -6,6 +6,7 @@ angular.module('todo2Controller', [])
 		$scope.formData1 = {};//提前加载的数据
 
 		$scope.temp = {};//临时账户
+		$scope.tempfmbf = {};//临时理财项目
 		$scope.loading = true;
 		$scope.input = {};//登录页面的输入
 		$scope.FLAG=1;
@@ -16,9 +17,11 @@ angular.module('todo2Controller', [])
 		$scope.client_id=localStorage.getItem("account_id");
 		$scope.account={};//设置当前用户
 		$scope.money;//用于存款和取款
+		$scope.Productmoney;//用于输入理财产品的输入
 		$scope.currentProduct={};//记录当前选择的理财产品
 		$scope.wealth="0";
 		$scope.income="0";
+		$scope.type;//记录理财项目类型
 		// GET =====================================================================
 		// when landing on the page, get all todos and show them
 		// use the service to get all the todos
@@ -289,6 +292,56 @@ angular.module('todo2Controller', [])
 					
 				}
 			}
+
+		};
+
+		$scope.investment= function(productmoney) {
+			withdrawal(productmoney);//减少账户余额
+			//更改理财表
+			$scope.currentProduct.balance=productmoney;
+			$scope.currentProduct.interest=$scope.currentProduct.balance*$scope.currentProduct.interest_rate*$scope.currentProduct.store_time;
+
+			//删除原来的账号
+            $scope.loading = true;
+            Fmbfs.delete($scope.currentProduct._id)
+            .success(function(data) {
+                $scope.loading = false;
+                $scope.fmbfs = data; // assign our new list of todos
+               
+			});
+			//构建新账号
+			$scope.tempfmbf.client_id=$scope.account.client_id;
+			$scope.tempfmbf.name=$scope.account.name;
+			$scope.tempfmbf.type=$scope.account.type;
+			$scope.tempfmbf.interest_rate=$scope.account.interest_rate;
+			$scope.tempfmbf.interest=$scope.account.interest;
+			$scope.tempfmbf. begin_date=$scope.account.begin_date;
+			$scope.tempfmbf.store_time=$scope.account.store_time;
+			$scope.tempfmbf.balance=$scope.account.balance;
+			//添加新账号
+			Fmbfs.create($scope.tempfmbf)
+			.success(function(data) {
+				$scope.loading = false;
+				$scope.temp = {}; 
+				$scope.fmbfs = data; 
+			});
+			//得到当前数组
+            Fmbfs.get()
+			.success(function(data) {
+				$scope.fmbfs = data;
+				$scope.loading = false;
+			});	
+			
+			//重新确定当前项目
+			for(var i=0;i<$scope.fmbfs.length;i++){
+
+				if($scope.client_id==$scope.fmbfs[i].client_id&&$scope.type==$scope.fmbfs[i].type){
+	
+						$scope.currentProduct=$scope.fmbfs[i];
+				}
+			}
+	
+
 
 		};
 	}]);
